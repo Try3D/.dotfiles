@@ -1,0 +1,84 @@
+# Starship 0.56.0
+
+# Settings
+add_newline = false 
+command_timeout = 20000
+
+[character]
+success_symbol = "[➜](bold green)"
+
+[cmd_duration]
+format = '\[[⏱ $duration]($style)\]'
+
+[conda]
+symbol = " "
+format = '\[[$symbol$environment]($style)\]'
+
+[dart]
+symbol = " "
+format = '\[[$symbol($version)]($style)\]'
+
+[directory]
+read_only = " "
+
+[elixir]
+symbol = " "
+format = '\[[$symbol($version \(OTP $otp_version\))]($style)\]'
+
+[git_branch]
+symbol = " "
+format = '\[[$symbol$branch]($style)\]'
+
+[git_status]
+format = '([\[$all_status$ahead_behind\]]($style))'
+
+[golang]
+symbol = ""
+format = '\[[$symbol($version)]($style)\]'
+
+[java]
+symbol = " "
+format = '\[[$symbol($version)]($style)\]'
+
+[kotlin]
+symbol = "🅺 "
+format = 'via [$symbol]($style)'
+
+[lua]
+symbol = ""
+format = '\[[$symbol($version)]($style)\]'
+
+[memory_usage]
+symbol = " "
+format = '\[$symbol[$ram( | $swap)]($style)\]'
+
+[nodejs]
+symbol = " "
+format = '\[[$symbol($version)]($style)\]'
+
+[package]
+symbol = " "
+format = '\[[$symbol$version]($style)\]'
+
+[perl]
+symbol = " "
+format = '\[[$symbol($version)]($style)\]'
+
+[python]
+symbol = " "
+format = '\[[${symbol}${pyenv_prefix}(${version})(\($virtualenv\))]($style)\]'
+
+[ruby]
+symbol = ""
+format = '\[[$symbol($version)]($style)\]'
+
+[scala]
+symbol = " "
+format = '\[[$symbol($version)]($style)\]'
+
+[swift]
+symbol = "ﯣ "
+format = '\[[as $symbol]\]'
+
+[time]
+format = '\[[$time]($style)\]'

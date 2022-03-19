@@ -1,0 +1,40 @@
+#!/usr/bin/env zsh
+
+cd ~/.dotfiles/
+confs=`echo */ | tr ' ' '\n'`
+
+SELECTED=`echo "$confs" | fzf`
+
+if [ "$SELECTED" = "alacritty/" ]
+then
+    nvim ~/.config/alacritty/alacritty.yml
+elif [ "$SELECTED" = "bin/" ]
+then
+    cd ~/.dotfiles/bin/.local/bin; nvim gotoconf
+elif [ "$SELECTED" = "i3/" ]
+then
+    cd ~/.config/i3; nvim config
+elif [ "$SELECTED" = "nvim/" ]
+then
+    cd ~/.config/nvim; nvim init.vim
+elif [ "$SELECTED" = "picom/" ]
+then
+    nvim ~/.config/picom.conf
+elif [ "$SELECTED" = "ranger/" ]
+then
+    cd ~/.config/ranger; nvim rc.conf
+elif [ "$SELECTED" = "starship/" ]
+then
+    nvim ~/.config/starship.toml
+elif [ "$SELECTED" = "tmux/" ]
+then
+    nvim ~/.tmux.conf 
+elif [ "$SELECTED" = "wallpapers/" ]
+then
+    nitrogen &
+elif [ "$SELECTED" = "zsh/" ]
+then
+    nvim ~/.zshrc
+else
+    echo "Does not exist sorrrrrry"
+fi

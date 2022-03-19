@@ -1,0 +1,194 @@
+# i3 config file (v4.19.1)
+
+set $mod Mod4
+
+# Window title Font
+font pango:Fira Sans 7
+
+# Adjust Screen Brightness
+bindsym XF86MonBrightnessUp exec brightnessctl s +10%
+bindsym XF86MonBrightnessDown exec brightnessctl s 10%-
+
+# Adjust audio
+set $refresh_i3status killall -SIGUSR1 i3status
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
+bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+
+# Method of Popup
+popup_during_fullscreen leave_fullscreen
+
+# Focus
+focus_on_window_activation focus
+focus_follows_mouse no
+
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+# Start a terminal
+bindsym $mod+Return exec alacritty
+
+# Kill focused window
+bindsym $mod+q kill
+
+# Start rofi
+bindsym $mod+d exec rofi -show-icons -show run
+bindsym $mod+slash exec rofi -show-icons -show window
+bindsym $mod+space exec rofi -show-icons -show drun
+
+# Change focus
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+# Also with cursor keys
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+# move focused window
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+# Also with cursor keys
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# Split Windows
+bindsym $mod+s split v
+bindsym $mod+v split h
+
+# Enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen toggle
+
+# Change container layout
+bindsym $mod+w layout tabbed
+bindsym $mod+t layout toggle split
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+mod1+space focus mode_toggle
+
+# focus the parent container
+bindsym $mod+a focus parent
+
+# Define names for default workspaces
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "10"
+
+# switch to workspace
+bindsym $mod+1 workspace number $ws1
+bindsym $mod+2 workspace number $ws2
+bindsym $mod+3 workspace number $ws3
+bindsym $mod+4 workspace number $ws4
+bindsym $mod+5 workspace number $ws5
+bindsym $mod+6 workspace number $ws6
+bindsym $mod+7 workspace number $ws7
+bindsym $mod+8 workspace number $ws8
+bindsym $mod+9 workspace number $ws9
+bindsym $mod+0 workspace number $ws10
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace number $ws1
+bindsym $mod+Shift+2 move container to workspace number $ws2
+bindsym $mod+Shift+3 move container to workspace number $ws3
+bindsym $mod+Shift+4 move container to workspace number $ws4
+bindsym $mod+Shift+5 move container to workspace number $ws5
+bindsym $mod+Shift+6 move container to workspace number $ws6
+bindsym $mod+Shift+7 move container to workspace number $ws7
+bindsym $mod+Shift+8 move container to workspace number $ws8
+bindsym $mod+Shift+9 move container to workspace number $ws9
+bindsym $mod+Shift+0 move container to workspace number $ws10
+
+# move focused container to workspace and focus
+bindsym $mod+mod1+1 move container to workspace number $ws1; workspace number $ws1
+bindsym $mod+mod1+2 move container to workspace number $ws2; workspace number $ws2
+bindsym $mod+mod1+3 move container to workspace number $ws3; workspace number $ws3
+bindsym $mod+mod1+4 move container to workspace number $ws4; workspace number $ws4
+bindsym $mod+mod1+5 move container to workspace number $ws5; workspace number $ws5
+bindsym $mod+mod1+6 move container to workspace number $ws6; workspace number $ws6
+bindsym $mod+mod1+7 move container to workspace number $ws7; workspace number $ws7
+bindsym $mod+mod1+8 move container to workspace number $ws8; workspace number $ws8
+bindsym $mod+mod1+9 move container to workspace number $ws9; workspace number $ws9
+bindsym $mod+mod1+0 move container to workspace number $ws0; workspace number $ws0
+
+# Reload config file
+bindsym $mod+Shift+c reload
+# restart i3 inplace
+bindsym $mod+Shift+r restart
+
+# Create Log out, Reboot, Poweroff bindings
+mode "Exit (L)ogout, (R)eboot, (P)oweroff" {
+    bindsym $mod+r exec systemctl reboot
+        bindsym $mod+l exit
+        bindsym $mod+p exec systemctl poweroff
+
+# back to normal: Enter or Escape
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+bindsym $mod+Shift+e mode "Exit (L)ogout, (R)eboot, (P)oweroff"
+
+# resize window (you can also use the mouse for that)
+mode "resize" {
+    bindsym h resize shrink width 10 px or 10 ppt
+        bindsym k resize grow height 10 px or 10 ppt
+        bindsym k resize shrink height 10 px or 10 ppt
+        bindsym l resize grow width 10 px or 10 ppt
+
+        bindsym Left resize shrink width 10 px or 10 ppt
+        bindsym Down resize grow height 10 px or 10 ppt
+        bindsym Up resize shrink height 10 px or 10 ppt
+        bindsym Right resize grow width 10 px or 10 ppt
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+        bindsym $mod+r mode "default"
+}
+
+bindsym $mod+r mode "resize"
+
+# i3bar
+bar {
+    status_command i3status
+    position bottom
+    font pango: JetBrains Mono SemiBold 8
+    # status_command i3blocks
+}
+
+# Scratchpad
+bindsym $mod+Shift+minus move scratchpad
+bindsym $mod+minus scratchpad show
+
+# Hide edge borders
+hide_edge_borders both
+
+# Custom Keybindings
+bindsym $mod+b exec microsoft-edge
+bindsym $mod+c exec alacritty -e ranger
+bindsym $mod+Escape exec i3lock-fancy
+bindsym $mod+Shift+t exec ~/.local/bin/toggle_alacritty_opacity
+
+
+# Startup Applications
+exec --no-startup-id nm-applet
+exec picom &
+exec nitrogen --restore &
+exec --no-startup-id ~/.config/i3/i3-battery-popup/i3-battery-popup &
+exec microsoft-edge &
+exec xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'

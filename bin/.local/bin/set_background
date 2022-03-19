@@ -1,0 +1,9 @@
+#!/usr/bin/env zsh
+
+cd ~/.local/share/backgrounds
+background=`echo * | tr ' ' '\n'`
+
+SELECTED=`printf "$background" | fzf`
+echo $SELECTED
+
+nitrogen --set-scaled $SELECTED
