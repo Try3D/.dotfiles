@@ -22,7 +22,7 @@ export GOPATH="$HOME/go/"
 bindkey "^[[1;3C" forward-word
 bindkey "^[[1;3D" backward-word
 bindkey -s '^w' "gotoconf\n"
-bindkey -s '^f' "tmux-sessionizer\n"
+bindkey -s '^f' "tmuxsessionizer\n"
 
 # Starship promot
 eval "$(starship init zsh)"

@@ -197,7 +197,7 @@ hide_edge_borders both
 bindsym $mod+b exec microsoft-edge
 bindsym $mod+c exec alacritty -e ranger
 bindsym $mod+Escape exec i3lock-fancy
-bindsym $mod+Shift+t exec ~/.local/bin/toggle_alacritty_opacity
+bindsym $mod+Shift+t exec ~/.local/bin/togglealacrittyopacity
 
 
 # Startup Applications
