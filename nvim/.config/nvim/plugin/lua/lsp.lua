@@ -29,7 +29,7 @@ end
 
 -- Cmp Config
 
-local cmp = require'cmp'
+local cmp = require('cmp')
 local lspkind = require('lspkind')
 
 local source_mapping = {
@@ -39,6 +39,7 @@ local source_mapping = {
 }
 
 cmp.setup({
+
   snippet = {
     expand = function(args)
       require('luasnip').lsp_expand(args.body)
@@ -52,13 +53,12 @@ cmp.setup({
     },
 
   formatting = {
-    format = lspkind.cmp_format({
-      mode = 'symbol',
-      maxwidth = 50,
-      before = function (entry, vim_item)
-        return vim_item
-      end
-    })
+  	format = function(entry, vim_item)
+  		vim_item.kind = lspkind.presets.default[vim_item.kind]
+  		local menu = source_mapping[entry.source.name]
+  		vim_item.menu = menu
+  		return vim_item
+  	end,
   },
 
   sources = cmp.config.sources({

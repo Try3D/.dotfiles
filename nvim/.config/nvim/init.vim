@@ -10,7 +10,9 @@ Plug 'hrsh7th/cmp-path'
 Plug 'hrsh7th/cmp-buffer'
 Plug 'onsails/lspkind-nvim'
 
-Plug 'L3MON4D3/LuaSnip'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+
+Plug 'L4MON4D3/LuaSnip'
 Plug 'saadparwaiz1/cmp_luasnip'
 
 Plug 'fatih/vim-go'
@@ -19,10 +21,11 @@ Plug 'Raimondi/delimitMate'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 
-Plug 'nvim-telescope/telescope.nvim'
-Plug 'nvim-telescope/telescope-fzy-native.nvim'
 Plug 'ThePrimeagen/harpoon'
 Plug 'nvim-lua/plenary.nvim'
+
+Plug 'nvim-telescope/telescope.nvim'
+Plug 'nvim-telescope/telescope-fzy-native.nvim'
 
 Plug 'tpope/vim-fugitive'
 Plug 'mbbill/undotree'
@@ -33,8 +36,6 @@ Plug 'gruvbox-community/gruvbox'
 call plug#end()
 
 let mapleader = " "
-
-let g:rustfmt_autosave = 1
 
 augroup highlight_yank
     autocmd!

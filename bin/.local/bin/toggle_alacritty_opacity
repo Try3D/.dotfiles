@@ -1,4 +1,4 @@
-#!/usr/bin/env zsh
+#!/usr/bin/sh
 
 # If alacritty.yml does not exist, raise an alert
 [[ ! -f ~/.config/alacritty/alacritty.yml ]] && \

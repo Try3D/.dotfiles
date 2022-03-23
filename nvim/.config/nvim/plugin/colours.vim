@@ -21,4 +21,4 @@ endfun
 call ColourMyPencils()
 
 " Calling Themes
-nnoremap <leader>cmp :call ColourMyPencils()<cr>
+nnoremap <leader>cmg :call ColourMyPencils()<cr>
