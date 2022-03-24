@@ -4,16 +4,8 @@
 call plug#begin('~/.config/nvim/plugged')
 
 Plug 'neovim/nvim-lspconfig'
-Plug 'hrsh7th/nvim-cmp'
-Plug 'hrsh7th/cmp-nvim-lsp'
-Plug 'hrsh7th/cmp-path'
-Plug 'hrsh7th/cmp-buffer'
-Plug 'onsails/lspkind-nvim'
-
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-
-Plug 'L4MON4D3/LuaSnip'
-Plug 'saadparwaiz1/cmp_luasnip'
+Plug 'ms-jpq/coq_nvim', {'branch': 'coq'}
+Plug 'ms-jpq/coq.artifacts', {'branch': 'artifacts'}
 
 Plug 'fatih/vim-go'
 Plug 'rust-lang/rust.vim'
@@ -37,7 +29,9 @@ call plug#end()
 
 let mapleader = " "
 
+let g:coq_settings = { 'auto_start': 'shut-up' }
+
 augroup highlight_yank
     autocmd!
-    autocmd TextYankPost * silent! lua require'vim.highlight'.on_yank({timeout = 100})
+    autocmd TextYankPost * silent! lua require'vim.highlight'.on_yank({timeout = 50})
 augroup END

@@ -1,4 +1,4 @@
--- Lsp Config
+-- Lsp and COQ
 
 -- Mappings
 local opts = { noremap=true, silent=true }
@@ -27,51 +27,8 @@ local on_attach = function(client, bufnr)
   vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
 end
 
--- Cmp Config
-
-local cmp = require('cmp')
-local lspkind = require('lspkind')
-
-local source_mapping = {
-    nvim_lsp = "[LSP]",
-    path = "[Path]",
-	buffer = "[Buffer]",
-}
-
-cmp.setup({
-
-  snippet = {
-    expand = function(args)
-      require('luasnip').lsp_expand(args.body)
-    end,
-  },
-
-  mapping = {
-    ['<C-p>'] = cmp.mapping.select_prev_item(),
-    ['<C-n>'] = cmp.mapping.select_next_item(),
-    ['<C-Space>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
-    },
-
-  formatting = {
-  	format = function(entry, vim_item)
-  		vim_item.kind = lspkind.presets.default[vim_item.kind]
-  		local menu = source_mapping[entry.source.name]
-  		vim_item.menu = menu
-  		return vim_item
-  	end,
-  },
-
-  sources = cmp.config.sources({
-    { name = 'nvim_lsp' },
-    { name = 'path' },
-    { name = 'luasnip' },
-    { name = 'buffer', keyword_length = 5 },
-  })
-})
-
 -- Configure Lsp Servers
 
-require('lspconfig').gopls.setup {capablities = capablities}
-require('lspconfig').pyright.setup {capablities = capablities}
-require('lspconfig').rls.setup {capablities = capablities}
-require('lspconfig').tsserver.setup {capablities = capablities}
+require('lspconfig').gopls.setup {require("coq").lsp_ensure_capabilities}
+require('lspconfig').pyright.setup {require("coq").lsp_ensure_capabilities}
+require('lspconfig').rls.setup {require("coq").lsp_ensure_capabilities}
