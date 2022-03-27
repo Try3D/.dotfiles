@@ -2,17 +2,13 @@
 
 # Settings
 add_newline = false 
-command_timeout = 20000
+command_timeout = 2000
 
 [character]
 success_symbol = "[➜](bold green)"
 
 [cmd_duration]
 format = '\[[⏱ $duration]($style)\]'
-
-[conda]
-symbol = " "
-format = '\[[$symbol$environment]($style)\]'
 
 [dart]
 symbol = " "
@@ -48,10 +44,6 @@ format = 'via [$symbol]($style)'
 symbol = ""
 format = '\[[$symbol($version)]($style)\]'
 
-[memory_usage]
-symbol = " "
-format = '\[$symbol[$ram( | $swap)]($style)\]'
-
 [nodejs]
 symbol = " "
 format = '\[[$symbol($version)]($style)\]'
@@ -75,10 +67,3 @@ format = '\[[$symbol($version)]($style)\]'
 [scala]
 symbol = " "
 format = '\[[$symbol($version)]($style)\]'
-
-[swift]
-symbol = "ﯣ "
-format = '\[[as $symbol]\]'
-
-[time]
-format = '\[[$time]($style)\]'

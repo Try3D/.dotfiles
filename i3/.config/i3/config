@@ -2,20 +2,15 @@
 
 set $mod Mod4
 
-# For Colemak
-exec setxkbmap us -variant colemak &
-exec bash -c "sleep 1; xmodmap -e 'keycode 66 = Escape'" &
+# Keyboard layout
 
-# For Colemak dh
-# exec setxkbmap us -variant colemak_dh &
+# For Colemak
+# exec setxkbmap us -variant colemak &
 # exec bash -c "sleep 1; xmodmap -e 'keycode 66 = Escape'" &
 
-# For Qwerty
-# exec xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape' &
-
-# For Dvorak
-# exec setxkbmap us -variant dvorak &
-# exec bash -c "sleep 1; xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'" &
+# For Colemak dh
+exec setxkbmap us -variant colemak_dh &
+exec bash -c "xmodmap -e 'clear Lock' -e 'keycode 66 = Escape'" &
 
 # Window title Font
 font pango:Fira Sans 7

@@ -36,5 +36,5 @@ elif [ "$SELECTED" = "zsh/" ]
 then
     nvim ~/.zshrc
 else
-    echo "Does not exist sorrrrrry"
+    echo "Does not exist sorry"
 fi

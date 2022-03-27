@@ -1,13 +1,13 @@
 " ColourMyTheme
 
 fun! ColourMyPencils()
-    let g:gruvbox_contrast_dark = 'hard'
-    colorscheme gruvbox 
+    colorscheme one 
+    set background=dark
     hi Normal guibg=none
     hi WinSeparator guibg=none
 
     let g:lightline = {
-          \ 'colorscheme': 'gruvbox',
+          \ 'colorscheme': 'one',
           \ 'active': {
           \   'left': [ [ 'mode', 'paste' ],
           \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ] },
@@ -21,4 +21,4 @@ endfun
 call ColourMyPencils()
 
 " Calling Themes
-nnoremap <leader>cmg :call ColourMyPencils()<cr>
+nnoremap <leader>cmp :call ColourMyPencils()<cr>

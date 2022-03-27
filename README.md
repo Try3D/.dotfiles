@@ -25,4 +25,3 @@ Language servers
 - Gopls
 - Pyright
 - Rls
-- Tsserver

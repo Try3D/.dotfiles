@@ -7,7 +7,7 @@ alias theme='bash -c "$(wget -qO- https://git.io/vQgMr)"'
 # History in cache directory:
 HISTSIZE=10000
 SAVEHIST=10000
-HISTFILE=~/.cache/zsh/history
+HISTFILE=~/.zsh_history
 
 # Paths
 export PATH=$PATH:$HOME/.cargo/bin
@@ -30,6 +30,3 @@ eval "$(starship init zsh)"
 # Sources
 source ~/.zsh-plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
 source ~/.zsh-plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
-source ~/.zsh-plugins/sudo.plugin.zsh
-source ~/.zsh-plugins/copybuffer.plugin.zsh
-source ~/.zsh-plugins/web-search.plugin.zsh

@@ -4,14 +4,14 @@
 [[ ! -f ~/.config/alacritty/alacritty.yml ]] && \
     notify-send "alacritty.yml does not exist" && exit 0
 
-## Fetch background_opacity from alacritty.yml
+# Fetch background_opacity from alacritty.yml
 opacity=$(awk '$1 == "opacity:" {print $2; exit}' \
     ~/.config/alacritty/alacritty.yml)
 
-## Assign toggle opacity value
+# Assign toggle opacity value
 if [ $opacity = 1 ]
 then
-    toggle_opacity=0.85
+    toggle_opacity=0.95
 else
     toggle_opacity=1
 fi
