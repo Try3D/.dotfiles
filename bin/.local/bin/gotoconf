@@ -17,6 +17,9 @@ then
 elif [ "$SELECTED" = "nvim/" ]
 then
     cd ~/.config/nvim; nvim init.vim
+elif [ "$SELECTED" = "keyboard/" ]
+then
+    nvim ~/.config/xkb/real-prog-colemak.xkb
 elif [ "$SELECTED" = "picom/" ]
 then
     nvim ~/.config/picom.conf

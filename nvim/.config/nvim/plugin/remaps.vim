@@ -5,8 +5,6 @@ nnoremap <C-s><C-s> Gdgg
 nnoremap <leader><leader> :noh<CR>
 nnoremap <leader>fp :e ~/.config/nvim/init.vim<CR>
 
-nnoremap J :m .+1<CR>==
-nnoremap K :m .-2<CR>==
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
 
