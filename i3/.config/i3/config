@@ -4,13 +4,15 @@ set $mod Mod4
 
 # Keyboard layout
 
+# For Vim colemak
+exec xkbcomp ~/.config/xkb/vim-colemak.xkb $DISPLAY
+
 # For Colemak
 # exec setxkbmap us -variant colemak &
 # exec bash -c "sleep 1; xmodmap -e 'keycode 66 = Escape'" &
 
 # For Colemak dh
 # exec setxkbmap us -variant colemak_dh &
-exec xkbcomp ~/.config/xkb/real-prog-colemak.xkb $DISPLAY &
 # exec bash -c "xmodmap -e 'clear Lock' -e 'keycode 66 = Escape'" &
 
 # Window title Font

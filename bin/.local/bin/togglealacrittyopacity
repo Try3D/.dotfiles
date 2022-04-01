@@ -11,11 +11,11 @@ opacity=$(awk '$1 == "opacity:" {print $2; exit}' \
 # Assign toggle opacity value
 if [ $opacity = 1 ]
 then
-    toggle_opacity=0.95
+    toggle_opacity=0.9
 else
     toggle_opacity=1
 fi
 
-## Replace opacity value in alacritty.yml
+# Replace opacity value in alacritty.yml
 sed -i -- "s/opacity: $opacity/opacity: $toggle_opacity/" \
     ~/.config/alacritty/alacritty.yml

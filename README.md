@@ -20,6 +20,7 @@ i3-lock-fancy
 fzf
 rofi
 node.js
+brightnessctl
 ```
 Language servers
 - Gopls

@@ -1,8 +1,5 @@
 " Git Config
 
-nnoremap <leader>gq :diffget //3<CR>
-nnoremap <leader>gp :diffget //2<CR>
-
 nnoremap <leader>gs :G<CR>
 nnoremap <leader>gcc :Git commit<CR>
 nnoremap <leader>gp :Git push<CR>

@@ -31,4 +31,3 @@ end
 
 require('lspconfig').gopls.setup {require("coq").lsp_ensure_capabilities}
 require('lspconfig').pyright.setup {require("coq").lsp_ensure_capabilities}
-require('lspconfig').rls.setup {require("coq").lsp_ensure_capabilities}

@@ -20,7 +20,8 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'tpope/vim-fugitive'
 Plug 'mbbill/undotree'
 
-Plug 'itchyny/lightline.vim'
+Plug 'nvim-lualine/lualine.nvim'
+Plug 'kyazdani42/nvim-web-devicons'
 Plug 'rakr/vim-one'
 
 call plug#end()

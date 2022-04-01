@@ -3,7 +3,6 @@
 cd ~/.local/share/backgrounds
 background=`echo * | tr ' ' '\n'`
 
-SELECTED=`printf "$background" | fzf`
-echo $SELECTED
+SELECTED=`echo "$background" | fzf`
 
 nitrogen --set-scaled $SELECTED

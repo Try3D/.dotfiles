@@ -1,7 +1,6 @@
 " Default sets
 
-set tabstop=4
-set softtabstop=4
+set tabstop=4 softtabstop=4
 set shiftwidth=4
 set expandtab
 set smartindent
@@ -9,11 +8,10 @@ set smartindent
 set hidden
 set colorcolumn=80
 set nowrap
-set nu
 set relativenumber
+set nu
 set scrolloff=8
 set signcolumn=yes
-set laststatus=3
 set termguicolors
 
 set noswapfile
@@ -25,4 +23,3 @@ set smartcase
 set ignorecase
 
 set updatetime=50
-set completeopt=menu,menuone,noselect
