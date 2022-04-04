@@ -2,33 +2,14 @@
 
 set $mod Mod4
 
-# Keyboard layout
-
-# For Qwerty
-exec bash -c "sleep 1; xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'" &
-
-# For Vim colemak
-# exec xkbcomp ~/.config/xkb/vim-colemak.xkb $DISPLAY
-
-# For Colemak
-# exec setxkbmap us -variant colemak &
-# exec bash -c "sleep 1; xmodmap -e 'keycode 66 = Escape'" &
-
-# For Colemak dh
-# exec setxkbmap us -variant colemak_dh &
-# exec bash -c "xmodmap -e 'clear Lock' -e 'keycode 66 = Escape'" &
-
-# Window title Font
-font pango:Fira Sans 7
-
 # Adjust Screen Brightness
 bindsym XF86MonBrightnessUp exec brightnessctl s +10%
 bindsym XF86MonBrightnessDown exec brightnessctl s 10%-
 
 # Adjust audio
 set $refresh_i3status killall -SIGUSR1 i3status
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && $refresh_i3status
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && $refresh_i3status
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
@@ -150,12 +131,12 @@ bindsym $mod+Shift+r restart
 # Create Log out, Reboot, Poweroff bindings
 mode "Exit (L)ogout, (R)eboot, (P)oweroff" {
     bindsym $mod+r exec systemctl reboot
-        bindsym $mod+l exit
-        bindsym $mod+p exec systemctl poweroff
+    bindsym $mod+l exit
+    bindsym $mod+p exec systemctl poweroff
 
 # back to normal: Enter or Escape
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
 }
 
 bindsym $mod+Shift+e mode "Exit (L)ogout, (R)eboot, (P)oweroff"
@@ -163,46 +144,43 @@ bindsym $mod+Shift+e mode "Exit (L)ogout, (R)eboot, (P)oweroff"
 # resize window (you can also use the mouse for that)
 mode "resize" {
     bindsym h resize shrink width 10 px or 10 ppt
-        bindsym k resize grow height 10 px or 10 ppt
-        bindsym k resize shrink height 10 px or 10 ppt
-        bindsym l resize grow width 10 px or 10 ppt
+    bindsym k resize grow height 10 px or 10 ppt
+    bindsym k resize shrink height 10 px or 10 ppt
+    bindsym l resize grow width 10 px or 10 ppt
 
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
+    bindsym Left resize shrink width 10 px or 10 ppt
+    bindsym Down resize grow height 10 px or 10 ppt
+    bindsym Up resize shrink height 10 px or 10 ppt
+    bindsym Right resize grow width 10 px or 10 ppt
 
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-        bindsym $mod+r mode "default"
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+    bindsym $mod+r mode "default"
 }
 
 bindsym $mod+r mode "resize"
-
-# i3bar
-bar {
-    status_command i3status
-    position bottom
-    font pango: JetBrains Mono SemiBold 8
-    # status_command i3blocks
-}
 
 # Scratchpad
 bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+minus scratchpad show
 
-# Hide edge borders
-hide_edge_borders both
+# Borders
+hide_edge_borders smart
+for_window [class="^.*"] border pixel 1
 
 # Custom Keybindings
 bindsym $mod+b exec microsoft-edge
-bindsym $mod+c exec alacritty -e ranger
+bindsym $mod+c exec pcmanfm
 bindsym $mod+Escape exec i3lock-fancy
 bindsym $mod+Shift+t exec ~/.local/bin/togglealacrittyopacity
 
+# To be executed on reload
+exec_always --no-startup-id killall polybar; polybar &
 
 # Startup Applications
-exec --no-startup-id nm-applet
+exec nm-applet &
+exec blueman-applet &
 exec picom &
 exec nitrogen --restore &
 exec --no-startup-id ~/.config/i3/i3-battery-popup/i3-battery-popup &
+exec bash -c "sleep 1; xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'" &

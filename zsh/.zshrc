@@ -2,7 +2,11 @@
 alias v='nvim'
 alias ls='exa --icons'
 alias fs='fzf --preview "bat --style=numbers --color=always --line-range :500 {}"'
-alias theme='bash -c "$(wget -qO- https://git.io/vQgMr)"'
+
+alias gs='git status'
+alias gc='git commit'
+alias gp='git push'
+alias ga='git add'
 
 # History in cache directory:
 HISTSIZE=10000
@@ -13,7 +17,6 @@ HISTFILE=~/.zsh_history
 export PATH=$PATH:$HOME/.cargo/bin
 export PATH=$PATH:$HOME/go/bin
 export PATH=$PATH:$HOME/.local/bin
-export PATH=$PATH:$HOME/.emacs.d/bin
 export PATH=$PATH:/usr/local/go/bin
 export GOBIN="/home/try/go/bin/"
 export GOPATH="$HOME/go/"

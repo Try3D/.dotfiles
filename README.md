@@ -12,7 +12,6 @@ i3
 zsh
 stow
 starship
-ranger
 JetBrains Mono
 Fira Sans
 nitrogen
@@ -25,4 +24,3 @@ brightnessctl
 Language servers
 - Gopls
 - Pyright
-- Rls

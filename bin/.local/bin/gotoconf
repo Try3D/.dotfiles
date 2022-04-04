@@ -23,6 +23,9 @@ then
 elif [ "$SELECTED" = "picom/" ]
 then
     nvim ~/.config/picom.conf
+elif [ "$SELECTED" = "polybar/" ]
+then
+    nvim ~/.config/polybar/config.ini
 elif [ "$SELECTED" = "starship/" ]
 then
     nvim ~/.config/starship.toml
