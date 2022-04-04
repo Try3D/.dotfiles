@@ -2,6 +2,8 @@
 
 set $mod Mod4
 
+font pango: Fira Sans 8
+
 # Adjust Screen Brightness
 bindsym XF86MonBrightnessUp exec brightnessctl s +10%
 bindsym XF86MonBrightnessDown exec brightnessctl s 10%-
