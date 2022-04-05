@@ -11,7 +11,7 @@ opacity=$(awk '$1 == "opacity:" {print $2; exit}' \
 # Assign toggle opacity value
 if [ $opacity = 1 ]
 then
-    toggle_opacity=0.9
+    toggle_opacity=0.95
 else
     toggle_opacity=1
 fi

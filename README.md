@@ -14,7 +14,7 @@ stow
 starship
 JetBrains Mono
 Fira Sans
-nitrogen
+feh
 i3-lock-fancy
 fzf
 rofi

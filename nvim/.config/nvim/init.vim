@@ -1,11 +1,18 @@
-" init.vim for NVIM v0.7.0
+" init.vim for NVIM v1.7.0
 
 " Plugged Plugin Manager
 call plug#begin('~/.config/nvim/plugged')
 
 Plug 'neovim/nvim-lspconfig'
-Plug 'ms-jpq/coq_nvim', {'branch': 'coq'}
-Plug 'ms-jpq/coq.artifacts', {'branch': 'artifacts'}
+Plug 'hrsh7th/nvim-cmp'
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-path'
+Plug 'hrsh7th/cmp-buffer'
+Plug 'petertriho/cmp-git'
+Plug 'onsails/lspkind-nvim'
+
+Plug 'L3MON4D3/LuaSnip'
+Plug 'saadparwaiz1/cmp_luasnip'
 
 Plug 'fatih/vim-go'
 Plug 'rust-lang/rust.vim'
@@ -25,8 +32,6 @@ Plug 'kyazdani42/nvim-web-devicons'
 Plug 'rakr/vim-one'
 
 call plug#end()
-
-let g:coq_settings = { 'auto_start': 'shut-up' }
 
 let mapleader = " "
 

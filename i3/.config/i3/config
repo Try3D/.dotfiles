@@ -1,5 +1,8 @@
 # i3 config file (v4.19.1)
 
+exec bash -c "sleep 1; xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'" &
+# exec bash -c "setxkbmap us norman; sleep 1; xmodmap -e 'keycode 66 = Escape'"
+
 set $mod Mod4
 
 font pango: Fira Sans 8
@@ -183,6 +186,5 @@ exec_always --no-startup-id killall polybar; polybar &
 exec nm-applet &
 exec blueman-applet &
 exec picom &
-exec nitrogen --restore &
+exec ~/.fehbg &
 exec --no-startup-id ~/.config/i3/i3-battery-popup/i3-battery-popup &
-exec bash -c "sleep 1; xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'" &

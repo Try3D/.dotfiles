@@ -1,8 +1,9 @@
 #!/usr/bin/sh
 
-cd ~/.local/share/backgrounds
+cd ~/.local/share/backgrounds/
 background=`echo * | tr ' ' '\n'`
 
 SELECTED=`echo "$background" | fzf`
 
-nitrogen --set-scaled $SELECTED
+feh --bg-fill $SELECTED
+echo $SELECTED

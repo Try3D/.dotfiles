@@ -34,7 +34,7 @@ then
     nvim ~/.tmux.conf 
 elif [ "$SELECTED" = "wallpapers/" ]
 then
-    nitrogen &
+    ~/.local/bin/setbackground
 elif [ "$SELECTED" = "zsh/" ]
 then
     nvim ~/.zshrc
