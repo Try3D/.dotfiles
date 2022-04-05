@@ -1,5 +1,7 @@
 -- Lsp
 
+require("cmp_git").setup()
+
 -- Mappings
 local opts = { noremap=true, silent=true }
 vim.api.nvim_set_keymap('n', '<leader>e', '<cmd>lua vim.diagnostic.open_float()<CR>', opts)
@@ -34,11 +36,17 @@ local cmp = require('cmp')
 cmp.setup({
   sources = cmp.config.sources({
       { name = 'nvim_lsp' },
+      { name = 'cmp_git', max_item_count = 20 },
       { name = 'path' },
       { name = 'luasnip' },
       { name = 'buffer' },
-      { name = 'cmp_git' },
   }),
+
+  mapping = {
+      ['<C-p>'] = cmp.mapping.select_prev_item(),
+      ['<C-n>'] = cmp.mapping.select_next_item(),
+      ['<C-Space>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
+  },
 
   snippet = {
     expand = function(args)
@@ -46,29 +54,21 @@ cmp.setup({
     end,
   },
 
-  mapping = {
-    ['<C-p>'] = cmp.mapping.select_prev_item(),
-    ['<C-n>'] = cmp.mapping.select_next_item(),
-    ['<C-Space>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
-    },
-
   formatting = {
     format = require('lspkind').cmp_format {
       with_text = true,
       menu = {
-        buffer = "[BUF]",
+        buffer = "[buf]",
         nvim_lsp = "[LSP]",
         path = "[PATH]",
         luasnip = "[SNIP]",
         cmp_git = "[GIT]",
-      },
-    },
-  },
+      }
+    }
+  }
 })
 
 -- Configure Lsp Servers
 
 require('lspconfig').gopls.setup {capablities = capablities}
 require('lspconfig').pyright.setup {capablities = capablities}
-
-require("cmp_git").setup()

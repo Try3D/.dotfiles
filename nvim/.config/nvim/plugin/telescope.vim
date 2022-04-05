@@ -1,6 +1,6 @@
 " Telescope Config
 
-nnoremap <C-p> :Telescope find_files<CR>
+nnoremap <C-p> <cmd>Telescope find_files<CR>
 nnoremap <C-f>r <cmd>Telescope live_grep<CR>
 nnoremap <C-f>b <cmd>Telescope buffers<CR>
 nnoremap <C-f>h <cmd>Telescope help_tags<CR>
