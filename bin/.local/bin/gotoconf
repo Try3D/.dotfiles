@@ -1,11 +1,12 @@
 #!/usr/bin/sh
 
 cd ~/.dotfiles/
-confs=`echo */ | tr ' ' '\n'`
+SELECTED=`shuf -e */ | fzf`
 
-SELECTED=`echo "$confs" | fzf`
-
-if [ "$SELECTED" = "alacritty/" ]
+if [ -z $SELECTED ]
+then
+    :
+elif [ "$SELECTED" = "alacritty/" ]
 then
     nvim ~/.config/alacritty/alacritty.yml
 elif [ "$SELECTED" = "bin/" ]
@@ -17,9 +18,6 @@ then
 elif [ "$SELECTED" = "nvim/" ]
 then
     cd ~/.config/nvim; nvim init.vim
-elif [ "$SELECTED" = "keyboard/" ]
-then
-    cd ~/.config/xkb/; nvim vim-colemak.xkb
 elif [ "$SELECTED" = "picom/" ]
 then
     nvim ~/.config/picom.conf

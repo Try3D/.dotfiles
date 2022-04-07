@@ -9,7 +9,7 @@ window:
   position:
     x: 20
     y: 30
-  opacity: 0.95
+  opacity: 0.9
 scrolling:
   history: 10000
   multiplier: 3

@@ -178,6 +178,7 @@ bindsym $mod+b exec microsoft-edge
 bindsym $mod+c exec pcmanfm
 bindsym $mod+Escape exec i3lock-fancy
 bindsym $mod+Shift+t exec ~/.local/bin/togglealacrittyopacity
+bindsym $mod+Shift+b exec ~/.local/bin/setbackground -r
 
 # To be executed on reload
 exec_always --no-startup-id killall polybar; polybar &

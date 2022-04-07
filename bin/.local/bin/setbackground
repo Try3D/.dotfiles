@@ -1,9 +1,11 @@
 #!/usr/bin/sh
 
 cd ~/.local/share/backgrounds/
-background=`echo * | tr ' ' '\n'`
 
-SELECTED=`echo "$background" | fzf`
+if [ "$1" = "-r" -o "$1" = "--random" ]; then
+    SELECTED=`shuf -e * | shuf -n 1`
+else
+    SELECTED=`shuf -e * | fzf`
+fi
 
 feh --bg-fill $SELECTED
-echo $SELECTED

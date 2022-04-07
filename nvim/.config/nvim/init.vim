@@ -32,6 +32,8 @@ Plug 'nvim-lualine/lualine.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'rakr/vim-one'
 
+Plug 'ThePrimeagen/vim-be-good'
+
 call plug#end()
 
 let mapleader = " "
