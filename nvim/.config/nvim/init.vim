@@ -36,9 +36,7 @@ Plug 'ThePrimeagen/vim-be-good'
 
 call plug#end()
 
-let mapleader = " "
+let mapleader = ' '
 
-augroup highlight_yank
-    autocmd!
-    autocmd TextYankPost * silent! lua require'vim.highlight'.on_yank({timeout = 50})
-augroup END
+autocmd TextYankPost * silent! lua require'vim.highlight'.on_yank({timeout = 50})
+autocmd BufWritePre * :%s/\s\+$//e

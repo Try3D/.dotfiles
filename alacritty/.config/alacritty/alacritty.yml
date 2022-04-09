@@ -1,11 +1,10 @@
 # Alacritty(v0.9.1)
 
-env:
-  TERM: alacritty
+# Window
 window:
   dimensions:
     columns: 90
-    lines: 30 
+    lines: 30
   position:
     x: 20
     y: 30
@@ -19,13 +18,13 @@ font:
   normal:
     family: JetBrains Mono
   bold:
-    family: JetBrains Mono 
+    family: JetBrains Mono
     style: Bold
   italic:
-    family: JetBrains Mono 
+    family: JetBrains Mono
     style: Italic
   bolditalic:
-    family: JetBrains Mono 
+    family: JetBrains Mono
     style: Bold Italic
   size: 10
 

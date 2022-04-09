@@ -1,13 +1,7 @@
 " ColourMyTheme
 
-fun! ColourMyPencils()
-    colorscheme one 
-    set background=dark
-    hi Normal guibg=none
-    hi WinSeparator guibg=none
-endfun
+colorscheme one
+set background=dark
 
-call ColourMyPencils()
-
-" Calling Themes
-nnoremap <leader>cmp :call ColourMyPencils()<cr>
+hi Normal guibg=none
+hi WinSeparator guibg=none

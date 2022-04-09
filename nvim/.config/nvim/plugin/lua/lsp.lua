@@ -43,6 +43,7 @@ cmp.setup({
   }),
 
   mapping = {
+      ['<C-d>'] = cmp.mapping.confirm({ select = true }),
       ['<C-p>'] = cmp.mapping.select_prev_item(),
       ['<C-n>'] = cmp.mapping.select_next_item(),
       ['<C-Space>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
