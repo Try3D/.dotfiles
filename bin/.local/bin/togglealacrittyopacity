@@ -13,5 +13,5 @@ else
     toggle_opacity=1
 fi
 
-sed -i -- "s/opacity: $opacity/opacity: $toggle_opacity/" \
+sed -i "s/opacity: $opacity/opacity: $toggle_opacity/" \
     ~/.config/alacritty/alacritty.yml

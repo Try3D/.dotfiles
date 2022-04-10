@@ -1,0 +1,20 @@
+#!/usr/bin/sh
+
+[[ ! -f ~/.config/alacritty/alacritty.yml ]] && \
+    notify-send "alacritty.yml does not exist" && exit 0
+
+col=$(awk '$1 == "colors:" {print $2; exit}' \
+    ~/.config/alacritty/alacritty.yml)
+
+if [ $col = *one_dark ]
+then
+    sed -i 's/call ColourMyOneDark()/call ColourMyGruvbox()/' \
+        ~/.config/nvim/plugin/colours.vim
+    sed -i "s/*one_dark/*gruvbox/g" \
+        ~/.config/alacritty/alacritty.yml
+else
+    sed -i 's/call ColourMyGruvbox()/call ColourMyOneDark()/' \
+        ~/.config/nvim/plugin/colours.vim
+    sed -i "s/*gruvbox/*one_dark/g" \
+        ~/.config/alacritty/alacritty.yml
+fi

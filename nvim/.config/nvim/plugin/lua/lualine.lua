@@ -1,10 +1,11 @@
+-- Lualine Config
+
 require('lualine').setup {
   options = {
     icons_enabled = true,
-    theme = 'onedark',
     component_separators = '',
     section_separators = '',
-    -- globalstatus = true,
+    globalstatus = true,
   },
   sections = {
     lualine_a = {'mode'},
