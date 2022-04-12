@@ -166,7 +166,6 @@ for_window [class="^.*"] border pixel 1
 bindsym $mod+b exec microsoft-edge
 bindsym $mod+c exec pcmanfm
 bindsym $mod+Escape exec i3lock-fancy
-bindsym $mod+Shift+p exec ~/.local/bin/changetheme
 bindsym $mod+Shift+t exec ~/.local/bin/togglealacrittyopacity
 bindsym $mod+Shift+b exec ~/.local/bin/setbackground -r
 

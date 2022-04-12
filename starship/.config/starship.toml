@@ -1,7 +1,7 @@
 # Starship 0.56.0
 
 # Settings
-add_newline = false 
+add_newline = false
 command_timeout = 2000
 
 [character]
