@@ -1,7 +1,7 @@
 # i3 config file (v4.19.1)
 
-exec bash -c "setxkbmap us; sleep 1; xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'" &
-# exec bash -c "setxkbmap us dvorak; sleep 1; xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'"
+# For qwerty
+exec bash -c "sleep 1; xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'" &
 
 set $mod Mod4
 
@@ -35,9 +35,12 @@ bindsym $mod+Return exec alacritty
 bindsym $mod+q kill
 
 # Start rofi
-bindsym $mod+d exec rofi -show-icons -show run
-bindsym $mod+slash exec rofi -show-icons -show window
-bindsym $mod+space exec rofi -show-icons -show drun
+# bindsym $mod+d exec rofi -show-icons -show run
+# bindsym $mod+slash exec rofi -show-icons -show window
+# bindsym $mod+space exec rofi -show-icons -show drun
+bindsym $mod+d exec dmenu_run
+bindsym $mod+slash exec dmenu-win
+bindsym $mod+space exec i3-dmenu-desktop
 
 # Change focus
 bindsym $mod+h focus left
@@ -146,24 +149,10 @@ mode "Exit (L)ogout, (R)eboot, (P)oweroff" {
 
 bindsym $mod+Shift+e mode "Exit (L)ogout, (R)eboot, (P)oweroff"
 
-# resize window (you can also use the mouse for that)
-mode "resize" {
-    bindsym h resize shrink width 10 px or 10 ppt
-    bindsym k resize grow height 10 px or 10 ppt
-    bindsym k resize shrink height 10 px or 10 ppt
-    bindsym l resize grow width 10 px or 10 ppt
-
-    bindsym Left resize shrink width 10 px or 10 ppt
-    bindsym Down resize grow height 10 px or 10 ppt
-    bindsym Up resize shrink height 10 px or 10 ppt
-    bindsym Right resize grow width 10 px or 10 ppt
-
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
-    bindsym $mod+r mode "default"
-}
-
-bindsym $mod+r mode "resize"
+bindsym $mod+y resize shrink width 2 px or 2 ppt
+bindsym $mod+u resize grow height 2 px or 2 ppt
+bindsym $mod+i resize shrink height 2 px or 2 ppt
+bindsym $mod+o resize grow width 2 px or 2 ppt
 
 # Scratchpad
 bindsym $mod+Shift+minus move scratchpad

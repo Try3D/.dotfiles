@@ -21,4 +21,4 @@ fun! ColourMyOneDark()
     :lua require('lualine').setup {options = { theme = 'onedark'}}
 endfun
 
-call ColourMyOneDark()
+call ColourMyGruvbox()

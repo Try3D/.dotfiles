@@ -29,3 +29,6 @@ vim.api.nvim_set_keymap("n", "<leader>ds", ":lua require('telescope.builtin').di
 
 vim.api.nvim_set_keymap("n", "<leader>gb", ":lua require('telescope.builtin').git_branches()<CR>", {noremap = true})
 vim.api.nvim_set_keymap("n", "<leader>gm", ":lua require('telescope.builtin').git_commits()<CR>", {noremap = true})
+vim.api.nvim_set_keymap("n", "<C-p>", ":lua require('telescope.builtin').find_files({hidden=true})<CR>", {noremap = true})
+
+vim.api.nvim_set_keymap("n", "<leader>vrc, ":lua require('telescope.builtin').git_files()<CR>", {noremap = true})

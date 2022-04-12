@@ -29,10 +29,7 @@ then
     nvim ~/.config/starship.toml
 elif [ "$SELECTED" = "tmux/" ]
 then
-    nvim ~/.tmux.conf 
-elif [ "$SELECTED" = "wallpapers/" ]
-then
-    ~/.local/bin/setbackground
+    nvim ~/.tmux.conf
 elif [ "$SELECTED" = "zsh/" ]
 then
     nvim ~/.zshrc
