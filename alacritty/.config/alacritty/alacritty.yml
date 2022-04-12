@@ -2,7 +2,7 @@
 
 # Window
 window:
-  opacity: 0.9
+  opacity: 0.95
 
 # Scrolling
 scrolling:
@@ -81,4 +81,4 @@ schemes:
       cyan:    '0x56b6c2'
       white:   '0x828791'
 
-colors: *gruvbox
+colors: *one_dark

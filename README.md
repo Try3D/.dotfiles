@@ -17,7 +17,7 @@ Fira Sans
 feh
 i3-lock-fancy
 fzf
-rofi
+dmenu
 node.js
 brightnessctl
 ```

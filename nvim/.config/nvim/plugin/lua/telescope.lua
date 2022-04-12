@@ -21,6 +21,7 @@ require('telescope').setup {
 require('telescope').load_extension('fzy_native')
 
 vim.api.nvim_set_keymap("n", "<C-p>", ":lua require('telescope.builtin').find_files()<CR>", {noremap = true})
+vim.api.nvim_set_keymap("n", "<C-f>g", ":lua require('telescope.builtin').git_files()<CR>", {noremap = true})
 vim.api.nvim_set_keymap("n", "<C-f>r", ":lua require('telescope.builtin').live_grep()<CR>", {noremap = true})
 vim.api.nvim_set_keymap("n", "<C-f>b", ":lua require('telescope.builtin').buffers()<CR>", {noremap = true})
 vim.api.nvim_set_keymap("n", "<C-f>h", ":lua require('telescope.builtin').help_tags()<CR>", {noremap = true})
@@ -31,4 +32,4 @@ vim.api.nvim_set_keymap("n", "<leader>gb", ":lua require('telescope.builtin').gi
 vim.api.nvim_set_keymap("n", "<leader>gm", ":lua require('telescope.builtin').git_commits()<CR>", {noremap = true})
 vim.api.nvim_set_keymap("n", "<C-p>", ":lua require('telescope.builtin').find_files({hidden=true})<CR>", {noremap = true})
 
-vim.api.nvim_set_keymap("n", "<leader>vrc, ":lua require('telescope.builtin').git_files()<CR>", {noremap = true})
+vim.api.nvim_set_keymap("n", "<leader>pc", ":lua require('telescope.builtin').git_files({cwd = '~/.dotfiles'})<CR>", {noremap = true})

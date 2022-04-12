@@ -1,6 +1,3 @@
-# Ranger
-ranger/.config/ranger/bookmarks
-
 # Neovim
 nvim/.config/nvim/plugged
 nvim/.config/nvim/undodir
