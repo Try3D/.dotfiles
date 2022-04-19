@@ -20,7 +20,6 @@ Plug 'nvim-telescope/telescope-fzy-native.nvim'
 
 Plug 'nvim-lualine/lualine.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
-Plug 'rakr/vim-one'
 
 call plug#end()
 
