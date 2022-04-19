@@ -35,12 +35,9 @@ bindsym $mod+Return exec alacritty
 bindsym $mod+q kill
 
 # Start rofi
-# bindsym $mod+d exec rofi -show-icons -show run
-# bindsym $mod+slash exec rofi -show-icons -show window
-# bindsym $mod+space exec rofi -show-icons -show drun
-bindsym $mod+d exec dmenu_run
-bindsym $mod+slash exec dmenu-win
-bindsym $mod+space exec i3-dmenu-desktop
+bindsym $mod+d exec rofi -show-icons -show run
+bindsym $mod+slash exec rofi -show-icons -show window
+bindsym $mod+space exec rofi -show-icons -show drun
 
 # Change focus
 bindsym $mod+h focus left
@@ -177,4 +174,3 @@ exec nm-applet &
 exec blueman-applet &
 exec picom &
 exec ~/.fehbg &
-exec --no-startup-id ~/.config/i3/i3-battery-popup/i3-battery-popup &
