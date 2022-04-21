@@ -3,8 +3,7 @@
 set $mod Mod4
 
 # Keyboard layout
-exec bash -c "sleep 1; setxkbmap us dvorak; xmodmap -e 'clear Lock' -e 'keycode 66 = Escape'"
-# exec bash -c "sleep 1; setxkbmap us; xmodmap -e 'clear Lock' -e 'keycode 66 = Escape'" &
+exec setkeyboard dvorak
 
 # Adjust Screen Brightness
 bindsym XF86MonBrightnessUp exec brightnessctl s +10%
