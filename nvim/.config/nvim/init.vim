@@ -1,4 +1,4 @@
-" init.vim for NVIM v1.7.0
+" Nvim Config
 
 " Plugged Plugin Manager
 call plug#begin('~/.config/nvim/plugged')

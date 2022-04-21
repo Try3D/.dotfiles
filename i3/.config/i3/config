@@ -1,12 +1,10 @@
-# i3 config file (v4.19.1)
-
-# Keyboard layout
-exec bash -c "sleep 1; setxkbmap us dvorak; xmodmap -e 'clear Lock' -e 'keycode 66 = Escape'"
-# exec bash -c "sleep 1; xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'" &
+# i3 Config
 
 set $mod Mod4
 
-font pango: Fira Sans 8
+# Keyboard layout
+exec bash -c "sleep 1; setxkbmap us dvorak; xmodmap -e 'clear Lock' -e 'keycode 66 = Escape'"
+# exec bash -c "sleep 1; setxkbmap us; xmodmap -e 'clear Lock' -e 'keycode 66 = Escape'" &
 
 # Adjust Screen Brightness
 bindsym XF86MonBrightnessUp exec brightnessctl s +10%
@@ -28,6 +26,10 @@ focus_follows_mouse no
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
+
+# Borders
+hide_edge_borders smart
+for_window [class="^.*"] border pixel 1
 
 # Start a terminal
 bindsym $mod+Return exec alacritty
@@ -155,10 +157,6 @@ bindsym $mod+o resize grow width 2 px or 2 ppt
 # Scratchpad
 bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+minus scratchpad show
-
-# Borders
-hide_edge_borders smart
-for_window [class="^.*"] border pixel 1
 
 # Custom Keybindings
 bindsym $mod+b exec microsoft-edge
