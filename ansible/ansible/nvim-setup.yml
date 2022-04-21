@@ -1,0 +1,34 @@
+- hosts: localhost
+  become: yes
+  tasks:
+    - name: Remove neovim
+      shell: rm -rf ~/neovim
+
+    - name: Install dependencies
+      package:
+        name:
+          - ninja-build
+          - libtool
+          - autoconf
+          - automake
+          - cmake
+          - gcc
+          - gcc-c++
+          - make
+          - pkgconfig
+          - unzip
+          - patch
+          - gettext
+          - curl
+        state: latest
+
+    - name: Clone neovim
+      ansible.builtin.git:
+        repo: 'https://github.com/neovim/neovim.git'
+        dest: "{{ lookup('env', 'HOME') }}/neovim"
+
+    - name: Build neovim
+      shell: "cd {{ lookup('env', 'HOME') }}/neovim && make CMAKE_BUILD_TYPE=Release"
+
+    - name: Install neovim
+      shell: "cd {{ lookup('env', 'HOME') }}/neovim && sudo make install"
