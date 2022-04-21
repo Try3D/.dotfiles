@@ -34,4 +34,5 @@ eval "$(starship init zsh)"
 source ~/.zsh-plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
 source ~/.zsh-plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
 
+# Nix
 if [ -e /home/try/.nix-profile/etc/profile.d/nix.sh ]; then . /home/try/.nix-profile/etc/profile.d/nix.sh; fi
