@@ -1,4 +1,4 @@
--- Lsp
+-- Lsp Config
 
 -- Mappings.
 local opts = { noremap=true, silent=true }
