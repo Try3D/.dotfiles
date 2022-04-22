@@ -2,8 +2,10 @@
 
 set $mod Mod4
 
+font pango: Fira Sans 8
+
 # Keyboard layout
-exec setkeyboard dvorak
+exec ~/.local/bin/setkeyboard dvorak
 
 # Adjust Screen Brightness
 bindsym XF86MonBrightnessUp exec brightnessctl s +10%
@@ -148,11 +150,6 @@ mode "Exit (L)ogout, (R)eboot, (P)oweroff" {
 
 bindsym $mod+Shift+e mode "Exit (L)ogout, (R)eboot, (P)oweroff"
 
-bindsym $mod+y resize shrink width 2 px or 2 ppt
-bindsym $mod+u resize grow height 2 px or 2 ppt
-bindsym $mod+i resize shrink height 2 px or 2 ppt
-bindsym $mod+o resize grow width 2 px or 2 ppt
-
 # Scratchpad
 bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+minus scratchpad show
@@ -168,6 +165,7 @@ bindsym $mod+Shift+b exec ~/.local/bin/setbackground -r
 exec_always --no-startup-id killall polybar; polybar &
 
 # Startup Applications
+exec ~/.local/bin/i3-battery-popup &
 exec nm-applet &
 exec blueman-applet &
 exec picom &
