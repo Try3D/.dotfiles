@@ -1,0 +1,10 @@
+- hosts: localhost
+  tasks:
+    - name: Update system
+      shell: sudo dnf -y update
+
+    - name: Upgrade system
+      shell: sudo dnf -y upgrade --refresh
+
+    - name: Autoremove
+      shell: sudo dnf -y autoremove
