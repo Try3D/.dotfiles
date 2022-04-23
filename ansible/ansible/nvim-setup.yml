@@ -1,5 +1,4 @@
 - hosts: localhost
-  become: yes
   tasks:
     - name: Remove neovim
       shell: rm -rf ~/neovim

@@ -164,7 +164,7 @@ bindsym Print exec flatpak run org.flameshot.Flameshot gui &
 exec_always --no-startup-id killall polybar; polybar &
 
 # Startup Applications
-exec ~/.local/bin/setkeyboard dvorak &
+exec ~/.local/bin/setkeyboard prog-dvorak &
 exec ~/.local/bin/i3-battery-popup &
 exec nm-applet &
 exec blueman-applet &

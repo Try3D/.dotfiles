@@ -3,7 +3,7 @@
 if [[ $# -eq 1 ]]; then
     SELECTED=$1
 else
-    SELECTED=`printf "qwerty\ndvorak\ncolemak\ncolemak-dh" | fzf`
+    SELECTED=`printf "qwerty\ndvorak\nprog-dvorak" | fzf`
 fi
 
 if [ -z $SELECTED ]
@@ -12,6 +12,9 @@ then
 elif [ "$SELECTED" = "qwerty" ]
 then
     bash -c "setxkbmap us; xmodmap -e 'clear Lock' -e 'keycode 66 = Escape'"
+elif [ "$SELECTED" = "prog-dvorak" ]
+then
+    xkbcomp ~/.config/xkb/symbols/prog-dvorak.xkb $DISPLAY
 else
     bash -c "setxkbmap us $SELECTED; xmodmap -e 'clear Lock' -e 'keycode 66 = Escape'"
 fi
