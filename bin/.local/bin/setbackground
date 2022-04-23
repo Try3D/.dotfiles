@@ -1,7 +1,6 @@
 #!/usr/bin/sh
 
 cd ~/.local/share/backgrounds/
-currentbg=`awk '{print $4}' ~/.fehbg | tr -d "'"`
 
 if [ "$1" = "-r" -o "$1" = "--random" ]; then
     SELECTED=`shuf -e * | shuf -n 1`

@@ -36,9 +36,6 @@ eval "$(starship init zsh)"
 source ~/.zsh-plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
 source ~/.zsh-plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
 
-# Nix
-if [ -e /home/try/.nix-profile/etc/profile.d/nix.sh ]; then . /home/try/.nix-profile/etc/profile.d/nix.sh; fi
-
 # Fzf Keybindings
 if 'zmodload' 'zsh/parameter' 2>'/dev/null' && (( ${+options} )); then
   __fzf_key_bindings_options="options=(${(j: :)${(kv)options[@]}})"
