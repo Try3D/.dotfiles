@@ -152,7 +152,7 @@ bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+minus scratchpad show
 
 # Custom Keybindings
-bindsym $mod+b exec microsoft-edge
+bindsym $mod+b exec firefox
 bindsym $mod+c exec pcmanfm
 bindsym $mod+Escape exec i3lock-fancy
 bindsym $mod+Shift+t exec ~/.local/bin/togglealacrittyopacity
@@ -164,7 +164,7 @@ bindsym Print exec flatpak run org.flameshot.Flameshot gui &
 exec_always --no-startup-id killall polybar; polybar &
 
 # Startup Applications
-exec ~/.local/bin/setkeyboard prog-dvorak &
+exec ~/.local/bin/setkeyboard qwerty &
 exec ~/.local/bin/i3-battery-popup &
 exec nm-applet &
 exec blueman-applet &

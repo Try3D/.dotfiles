@@ -16,3 +16,5 @@ nnoremap <A-k> :resize -2<CR>
 nnoremap <A-j> :resize +2<CR>
 nnoremap <A-h> :vertical resize -2<CR>
 nnoremap <A-l> :vertical resize +2<CR>
+
+nnoremap <F3> :Neoformat<CR>

@@ -22,6 +22,8 @@ Plug 'nvim-telescope/telescope-fzy-native.nvim'
 Plug 'nvim-lualine/lualine.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
 
+Plug 'sbdchd/neoformat'
+
 call plug#end()
 
 let mapleader = ' '
@@ -30,3 +32,4 @@ let g:coq_settings = { 'auto_start': 'shut-up' }
 
 autocmd TextYankPost * silent! lua require'vim.highlight'.on_yank({timeout = 50})
 autocmd BufWritePre * :%s/\s\+$//e
+autocmd BufWritePre * :Neoformat
