@@ -24,7 +24,6 @@ vim.api.nvim_set_keymap("n", "<C-p>", ":lua require('telescope.builtin').find_fi
 vim.api.nvim_set_keymap("n", "<C-f>g", ":lua require('telescope.builtin').git_files()<CR>", {noremap = true})
 vim.api.nvim_set_keymap("n", "<C-f>r", ":lua require('telescope.builtin').live_grep()<CR>", {noremap = true})
 vim.api.nvim_set_keymap("n", "<C-f>b", ":lua require('telescope.builtin').buffers()<CR>", {noremap = true})
-vim.api.nvim_set_keymap("n", "<C-f>h", ":lua require('telescope.builtin').help_tags()<CR>", {noremap = true})
 vim.api.nvim_set_keymap("n", "<leader>ds", ":lua require('telescope.builtin').diagnostics()<CR>", {noremap = true})
 
 vim.api.nvim_set_keymap("n", "<leader>gb", ":lua require('telescope.builtin').git_branches()<CR>", {noremap = true})

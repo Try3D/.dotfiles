@@ -41,6 +41,6 @@ require("todo-comments").setup {
     pattern = [[\b(KEYWORDS):]],
   },
 }
-vim.api.nvim_set_keymap("n", "<C-t>l", ":TodoLocList<CR>", {noremap = true})
+
 vim.api.nvim_set_keymap("n", "<C-t>t", ":TodoTelescope<CR>", {noremap = true})
 vim.api.nvim_set_keymap("n", "<C-t>q", ":TodoQuickFix<CR>", {noremap = true})

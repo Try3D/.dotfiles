@@ -14,6 +14,7 @@ zsh
 stow
 starship
 JetBrains Mono
+Ubuntu Mono
 Fira Sans
 pcmanfm
 feh
@@ -24,6 +25,7 @@ node.js
 brightnessctl
 musikcube
 flameshot(scerenshot)
+git-delta
 ```
 Language servers
 - Gopls
