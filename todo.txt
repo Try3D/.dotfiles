@@ -1,3 +1,0 @@
-- Explore luasnip customization
-- Try simrat39/symbols-outline.nvim
-- Try comment.nvim
