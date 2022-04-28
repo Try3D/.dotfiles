@@ -78,9 +78,6 @@ bindsym $mod+Shift+space floating toggle
 # change focus between tiling / floating windows
 bindsym $mod+mod1+space focus mode_toggle
 
-# focus the parent container
-bindsym $mod+a focus parent
-
 # Define names for default workspaces
 set $ws1 "1"
 set $ws2 "2"
@@ -152,19 +149,17 @@ bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+minus scratchpad show
 
 # Custom Keybindings
-bindsym $mod+b exec firefox
-bindsym $mod+c exec pcmanfm
+bindsym $mod+p exec pcmanfm
 bindsym $mod+Escape exec i3lock-fancy
 bindsym $mod+Shift+t exec ~/.local/bin/togglealacrittyopacity
 bindsym $mod+Shift+b exec ~/.local/bin/setbackground -r
-bindsym $mod+m exec alacritty -e musikcube
 bindsym Print exec flatpak run org.flameshot.Flameshot gui &
 
 # To be executed on reload
 exec_always --no-startup-id killall polybar; polybar &
 
 # Startup Applications
-exec ~/.local/bin/setkeyboard qwerty &
+exec xmodmap -e 'clear Lock' -e 'keycode 66 = Escape'"
 exec ~/.local/bin/i3-battery-popup &
 exec nm-applet &
 exec blueman-applet &
