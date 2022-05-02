@@ -6,7 +6,6 @@ window:
 
 # Scrolling
 scrolling:
-  history: 10000
   multiplier: 3
 
 # Font configuration

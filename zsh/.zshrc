@@ -9,6 +9,7 @@ alias gs='git status'
 alias gc='git commit'
 alias gp='git push'
 alias ga='git add'
+alias gd='git diff'
 
 # History in cache directory:
 HISTSIZE=10000
@@ -139,10 +140,3 @@ bindkey -M viins '^R' fzf-history-widget
   eval $__fzf_key_bindings_options
   'unset' '__fzf_key_bindings_options'
 }
-
-export PNPM_HOME="/home/try/.local/share/pnpm"
-export PATH="$PNPM_HOME:$PATH"
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

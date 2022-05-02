@@ -18,6 +18,9 @@ then
 elif [ "$SELECTED" = "i3/" ]
 then
     cd ~/.config/i3; nvim config
+elif [ "$SELECTED" = "keyboard/" ]
+then
+    cd ~/.config/xkb/; nvim prog_ck.xkb
 elif [ "$SELECTED" = "nvim/" ]
 then
     cd ~/.config/nvim; nvim init.vim

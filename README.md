@@ -27,7 +27,3 @@ musikcube
 flameshot(scerenshot)
 git-delta
 ```
-Language servers
-- Gopls
-- Pyright
-- Rust Analyzer

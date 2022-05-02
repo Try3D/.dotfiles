@@ -10,5 +10,5 @@ set undofile
 nnoremap <space>pa :Ex<CR>
 nnoremap <A-r> <C-^>
 nnoremap <space><space> :noh<CR>
-vnoremap J :m '>+1<CR>gv=gv
-vnoremap K :m '<-2<CR>gv=gv
+vnoremap E :m '>+1<CR>gv=gv
+vnoremap I :m '<-2<CR>gv=gv
