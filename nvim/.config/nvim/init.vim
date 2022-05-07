@@ -7,6 +7,7 @@ set nobackup
 set undodir=~/.config/nvim/undodir
 set undofile
 
+inoremap ne <Esc>
 nnoremap <space>pa :Ex<CR>
 nnoremap <A-r> <C-^>
 nnoremap <space><space> :noh<CR>

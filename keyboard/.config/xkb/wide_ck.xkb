@@ -33,7 +33,7 @@ xkb_symbols "wide-colemak" {
     key <AD03> { [            f,            F ] };
     key <AD04> { [            p,            P ] };
     key <AD05> { [            b,            B ] };
-    key <AD06> { [    bracketleft, braceleft ] };
+    key <AD06> { [  bracketleft,    braceleft ] };
     key <AD07> { [            j,            J ] };
     key <AD08> { [            l,            L ] };
     key <AD09> { [            u,            U ] };
@@ -47,7 +47,7 @@ xkb_symbols "wide-colemak" {
     key <AC03> { [            s,            S ] };
     key <AC04> { [            t,            T ] };
     key <AC05> { [            g,            G ] };
-    key <AC06> { [    bracketright, braceright ] };
+    key <AC06> { [ bracketright,   braceright ] };
     key <AC07> { [            m,            M ] };
     key <AC08> { type="THREE_LEVEL", [            n,            N,          Left  ] };
     key <AC09> { type="THREE_LEVEL", [            e,            E,          Down  ] };
@@ -68,7 +68,7 @@ xkb_symbols "wide-colemak" {
     key <SPCE> { [        space,        space ] };
     key <CAPS> { [           ISO_Level3_Shift ] };
     key <BKSP> { [    Backspace,    Backspace ] };
-    key <LCTL> { [ Control_L, Control_L ] };
+    key <LCTL> { [    Control_L,    Control_L ] };
 
     };
  };
