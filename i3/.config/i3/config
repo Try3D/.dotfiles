@@ -136,10 +136,6 @@ mode "Exit (L)ogout, (R)eboot, (P)oweroff" {
 
 bindsym $mod+Shift+s mode "Exit (L)ogout, (R)eboot, (P)oweroff"
 
-# Alt Tab
-bindsym mod1+Tab exec ~/.local/bin/i3-alt-tab next all
-bindsym mod1+Shift+Tab exec ~/.local/bin/i3-alt-tab prev all
-
 # Scratchpad
 bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+minus scratchpad show
@@ -154,7 +150,7 @@ bindsym $mod+Shift+b exec ~/.local/bin/setbackground -r
 exec_always --no-startup-id killall polybar; polybar &
 
 # Startup Applications
-exec ~/.local/bin/setkeyboard ck.xkb &
+exec ~/.local/bin/setkeyboard prog_ck.xkb &
 exec ~/.local/bin/i3-battery-popup &
 exec firefox &
 exec nm-applet &
