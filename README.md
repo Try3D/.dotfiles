@@ -2,28 +2,28 @@
 
 My Dotfiles for linux
 
+OS: Fedora
+
 Requirements
 
 ```
+alacritty
 ansible
 nvim
 picom
 tmux
 i3
+polybar
 zsh
 stow
 starship
 JetBrains Mono
 Ubuntu Mono
-Fira Sans
 pcmanfm
 feh
 i3-lock-fancy
 fzf
 rofi
-node.js
 brightnessctl
-musikcube
-flameshot(scerenshot)
 git-delta
 ```

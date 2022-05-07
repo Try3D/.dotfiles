@@ -14,16 +14,19 @@ then
     nvim ~/ansible/nvim-setup.yml
 elif [ "$SELECTED" = "bin/" ]
 then
-    cd ~/.dotfiles/bin/.local/bin; nvim gotoconf
+    cd ~/.dotfiles/bin/.local/bin/; nvim gotoconf
+elif [ "$SELECTED" = "git/" ]
+then
+    nvim ~/.gitconfig
 elif [ "$SELECTED" = "i3/" ]
 then
-    cd ~/.config/i3; nvim config
+    cd ~/.config/i3/; nvim config
 elif [ "$SELECTED" = "keyboard/" ]
 then
     cd ~/.config/xkb/; nvim prog_ck.xkb
 elif [ "$SELECTED" = "nvim/" ]
 then
-    cd ~/.config/nvim; nvim init.vim
+    cd ~/.config/nvim/; nvim init.vim
 elif [ "$SELECTED" = "picom/" ]
 then
     nvim ~/.config/picom.conf
