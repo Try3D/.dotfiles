@@ -25,8 +25,6 @@ export GOBIN="/home/try/go/bin/"
 export GOPATH="$HOME/go/"
 
 # Keybindings
-bindkey "^[[1;3C" forward-word
-bindkey "^[[1;3D" backward-word
 bindkey -s '^w' "gotoconf\n"
 bindkey -s '^f' "tmuxsessionizer\n"
 

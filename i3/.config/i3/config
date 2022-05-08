@@ -1,5 +1,7 @@
 # i3 Config
 
+# workspace_auto_back_and_forth yes
+
 set $mod Mod1
 set $l n
 set $u i
@@ -18,6 +20,11 @@ bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && $refresh_i3status
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+
+# Media player controls
+bindsym XF86AudioPlay exec playerctl play-pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
 
 # Method of Popup
 popup_during_fullscreen leave_fullscreen
@@ -40,7 +47,7 @@ bindsym $mod+Return exec alacritty
 bindsym $mod+q kill
 
 # Start rofi
-bindsym $mod+d exec rofi -show-icons -show run
+bindsym $mod+r exec rofi -show-icons -show run
 bindsym $mod+slash exec rofi -show-icons -show window
 bindsym $mod+space exec rofi -show-icons -show drun
 
@@ -74,7 +81,11 @@ bindsym $mod+f fullscreen toggle
 
 # Change container layout
 bindsym $mod+w layout tabbed
+bindsym $mod+g layout stacking
 bindsym $mod+t layout toggle split
+
+bindsym $mod+a focus parent
+bindsym $mod+Shift+a focus child
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
@@ -133,6 +144,11 @@ mode "Exit (L)ogout, (R)eboot, (P)oweroff" {
 }
 
 bindsym $mod+Shift+s mode "Exit (L)ogout, (R)eboot, (P)oweroff"
+
+bindsym $mod+l resize shrink width 2 px or 2 ppt
+bindsym $mod+u resize grow height 2 px or 2 ppt
+bindsym $mod+y resize shrink height 2 px or 2 ppt
+bindsym $mod+semicolon resize grow width 2 px or 2 ppt
 
 # Scratchpad
 bindsym $mod+Shift+minus move scratchpad
