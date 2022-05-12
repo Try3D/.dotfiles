@@ -5,9 +5,7 @@ cd ~/.local/share/backgrounds/
 if [ "$1" = "-r" -o "$1" = "--random" ]; then
     SELECTED=`shuf -e * | shuf -n 1`
 else
-    SELECTED=`shuf -e * | fzf`
+    SELECTED=`shuf -e * | rofi -dmenu`
 fi
 
 feh --bg-fill $SELECTED
-
-notify-send "Changed background"

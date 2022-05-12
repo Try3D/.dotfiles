@@ -25,5 +25,6 @@ i3-lock-fancy
 fzf
 rofi
 brightnessctl
+playerctl
 git-delta
 ```

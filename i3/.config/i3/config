@@ -1,7 +1,5 @@
 # i3 Config
 
-# workspace_auto_back_and_forth yes
-
 set $mod Mod1
 set $l n
 set $u i
@@ -145,10 +143,10 @@ mode "Exit (L)ogout, (R)eboot, (P)oweroff" {
 
 bindsym $mod+Shift+s mode "Exit (L)ogout, (R)eboot, (P)oweroff"
 
-bindsym $mod+l resize shrink width 2 px or 2 ppt
-bindsym $mod+u resize grow height 2 px or 2 ppt
-bindsym $mod+y resize shrink height 2 px or 2 ppt
-bindsym $mod+semicolon resize grow width 2 px or 2 ppt
+bindsym $mod+l resize shrink width 4 px or 4 ppt
+bindsym $mod+u resize grow height 4 px or 4 ppt
+bindsym $mod+y resize shrink height 4 px or 4 ppt
+bindsym $mod+semicolon resize grow width 4 px or 4 ppt
 
 # Scratchpad
 bindsym $mod+Shift+minus move scratchpad
@@ -158,16 +156,18 @@ bindsym $mod+minus scratchpad show
 bindsym $mod+p exec pcmanfm
 bindsym $mod+Escape exec i3lock-fancy
 bindsym $mod+Shift+t exec ~/.local/bin/togglealacrittyopacity
-bindsym $mod+Shift+b exec ~/.local/bin/setbackground -r
+bindsym $mod+Shift+p exec ~/.local/bin/touchpadtoggle.sh
+bindsym $mod+Shift+b exec ~/.local/bin/setbackground
+bindsym $mod+ctrl+Shift+space exec  ~/.local/bin/setkeyboard
 
 # To be executed on reload
 exec_always --no-startup-id killall polybar; polybar &
+exec_always ~/.local/bin/setkeyboard prog_ck.xkb &
 
 # Startup Applications
 exec firefox &
 exec picom &
 exec nm-applet &
 exec blueman-applet &
-exec ~/.local/bin/setkeyboard prog_ck.xkb &
 exec ~/.local/bin/i3-battery-popup &
 exec ~/.fehbg &

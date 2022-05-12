@@ -19,7 +19,7 @@ format = '\[[$symbol$branch]($style)\]'
 format = '([\[$all_status$ahead_behind\]]($style))'
 
 [directory]
-read_only = " "
+read_only = ""
 
 [golang]
 symbol = ""

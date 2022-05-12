@@ -5,7 +5,7 @@ cd ~/.config/xkb/
 if [[ $# -eq 1 ]]; then
     SELECTED=$1
 else
-    SELECTED=`shuf -e * | fzf`
+    SELECTED=`shuf -e * | rofi -dmenu`
 fi
 
 xkbcomp $SELECTED $DISPLAY

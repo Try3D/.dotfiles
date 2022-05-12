@@ -4,6 +4,7 @@
 alias v='nvim'
 alias ls='exa --icons'
 alias fs='fzf --preview "bat --style=numbers --color=always --line-range :500 {}"'
+alias open='xdg-open'
 
 alias gs='git status'
 alias gc='git commit'
@@ -21,8 +22,6 @@ export PATH=$PATH:$HOME/.cargo/bin
 export PATH=$PATH:$HOME/go/bin
 export PATH=$PATH:$HOME/.local/bin
 export PATH=$PATH:/usr/local/go/bin
-export GOBIN="/home/try/go/bin/"
-export GOPATH="$HOME/go/"
 
 # Keybindings
 bindkey -s '^w' "gotoconf\n"
