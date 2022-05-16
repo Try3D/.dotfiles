@@ -8,5 +8,3 @@ set undodir=~/.config/nvim/undodir/
 set undofile
 nnoremap <space>pa :Ex<CR>
 nnoremap <space><space> :noh<CR>
-vnoremap E :m '>+1<CR>gv=gv
-vnoremap I :m '<-2<CR>gv=gv

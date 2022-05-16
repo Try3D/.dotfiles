@@ -3,6 +3,7 @@
 # Aliases
 alias v='nvim'
 alias ls='exa --icons'
+alias lr='exa -la'
 alias fs='fzf --preview "bat --style=numbers --color=always --line-range :500 {}"'
 alias open='xdg-open'
 
@@ -26,6 +27,8 @@ export PATH=$PATH:/usr/local/go/bin
 # Keybindings
 bindkey -s '^w' "gotoconf\n"
 bindkey -s '^f' "tmuxsessionizer\n"
+bindkey "\e[1;3C" forward-word
+bindkey "\e[1;3D" backward-word
 
 # Starship promot
 eval "$(starship init zsh)"
