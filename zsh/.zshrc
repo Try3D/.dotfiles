@@ -3,15 +3,9 @@
 # Aliases
 alias v='nvim'
 alias ls='exa --icons'
-alias lr='exa -la'
 alias fs='fzf --preview "bat --style=numbers --color=always --line-range :500 {}"'
 alias open='xdg-open'
-
-alias gs='git status'
-alias gc='git commit'
-alias gp='git push'
-alias ga='git add'
-alias gd='git diff'
+alias le='ls -la'
 
 # History in cache directory:
 HISTSIZE=10000

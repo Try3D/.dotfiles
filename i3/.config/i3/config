@@ -36,7 +36,7 @@ floating_modifier $mod
 
 # Borders
 hide_edge_borders smart
-for_window [class="^.*"] border pixel 1
+for_window [class=".*"] border pixel 1
 
 # Start a terminal
 bindsym $mod+Return exec --no-startup-id alacritty
@@ -148,16 +148,23 @@ bindsym $mod+Escape exec --no-startup-id i3lock-fancy
 bindsym $mod+Shift+t exec --no-startup-id ~/.local/bin/togglealacrittyopacity
 bindsym $mod+Shift+p exec --no-startup-id ~/.local/bin/touchpadtoggle.sh
 bindsym $mod+Shift+b exec --no-startup-id ~/.local/bin/setbackground
-bindsym $mod+ctrl+Shift+space exec --no-startup-id  ~/.local/bin/setkeyboard
 
 # To be executed on reload
 exec_always killall polybar; polybar &
+exec_always ~/.local/bin/setkeyboard.sh &
 
 # Startup Applications
+exec --no-startup-id ~/.local/bin/i3-battery-popup &
 exec --no-startup-id firefox &
 exec --no-startup-id picom &
 exec --no-startup-id nm-applet &
 exec --no-startup-id blueman-applet &
-exec --no-startup-id xkbcomp ~/.config/xkb/prog_ck.xkb  $DISPLAY &      
 exec --no-startup-id ~/.fehbg &
-exec --no-startup-id fluxgui &
+
+# class                 border  backgr. text    indicator child_border
+client.focused          #DA6E89 #DA6E89 #FFFFFF #98C379   #DA6E89
+client.focused_inactive #61AFEF #61AFEF #1E222A #98C379   #61AFEF
+client.unfocused        #2C3038 #2C3038 #FFFFFF #98C379   #2C3038
+client.urgent           #C678DD #C678DD #FFFFFF #98C379   #C678DD
+client.placeholder      #1E222A #1E222A #FFFFFF #98C379   #1E222A
+client.background       #1E222A

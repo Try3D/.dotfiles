@@ -20,6 +20,7 @@
           - gettext
           - curl
         state: latest
+      become: yes
 
     - name: Clone neovim
       ansible.builtin.git:
@@ -31,3 +32,4 @@
 
     - name: Install neovim
       shell: "cd {{ lookup('env', 'HOME') }}/neovim && sudo make install"
+      become: yes
