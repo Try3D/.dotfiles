@@ -17,7 +17,6 @@ set $refresh_i3status killall -SIGUSR1 i3status
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && $refresh_i3status
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && $refresh_i3status
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
-bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
 # Media player controls
 bindsym XF86AudioPlay exec --no-startup-id playerctl play-pause
@@ -121,17 +120,17 @@ bindsym $mod+Shift+0 move container to workspace number $ws10
 bindsym $mod+Shift+r restart
 
 # Create Log out, Reboot, Poweroff bindings
+bindsym $mod+Shift+s mode "Exit (L)ogout, (R)eboot, (P)oweroff"
+
 mode "Exit (L)ogout, (R)eboot, (P)oweroff" {
     bindsym $mod+r exec systemctl reboot
     bindsym $mod+l exit
     bindsym $mod+p exec systemctl poweroff
 
 # back to normal: Enter or Escape
-    bindsym Return mode "default"
+    bindsym $mod+Shift+s mode "default"
     bindsym Escape mode "default"
 }
-
-bindsym $mod+Shift+s mode "Exit (L)ogout, (R)eboot, (P)oweroff"
 
 bindsym $mod+l resize shrink width 4 px or 4 ppt
 bindsym $mod+u resize grow height 4 px or 4 ppt

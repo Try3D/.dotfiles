@@ -4,7 +4,7 @@ set relativenumber
 set nu
 set noswapfile
 set nobackup
-set undodir=~/.config/nvim/undodir/
+set undodir=~/.config/nvim/undodir
 set undofile
 nnoremap <space><space> :noh<CR>
 nnoremap <space>pa :Ex<CR>

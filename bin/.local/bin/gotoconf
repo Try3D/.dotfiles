@@ -9,15 +9,9 @@ then
 elif [ "$SELECTED" = "alacritty/" ]
 then
     nvim ~/.config/alacritty/alacritty.yml
-elif [ "$SELECTED" = "ansible/" ]
-then
-    nvim ~/ansible/nvim-setup.yml
 elif [ "$SELECTED" = "bin/" ]
 then
     cd ~/.dotfiles/bin/.local/bin/; nvim gotoconf
-elif [ "$SELECTED" = "git/" ]
-then
-    nvim ~/.gitconfig
 elif [ "$SELECTED" = "i3/" ]
 then
     cd ~/.config/i3/; nvim config
