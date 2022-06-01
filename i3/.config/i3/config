@@ -1,5 +1,7 @@
 # i3 Config
 
+bindsym $mod+m exec alacritty --command htop
+
 set $mod Mod1
 set $l n
 set $u i
@@ -19,9 +21,13 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 
 # Media player controls
-bindsym XF86AudioPlay exec --no-startup-id playerctl play-pause
-bindsym XF86AudioNext exec --no-startup-id playerctl next
-bindsym XF86AudioPrev exec --no-startup-id playerctl previous
+# bindsym XF86AudioPlay exec --no-startup-id playerctl play-pause
+# bindsym XF86AudioNext exec --no-startup-id playerctl next
+# bindsym XF86AudioPrev exec --no-startup-id playerctl previous
+
+# Notifications
+bindsym $mod+c exec --no-startup-id dunstctl history-pop
+bindsym $mod+shift+c exec --no-startup-id dunstctl close
 
 # Method of Popup
 popup_during_fullscreen leave_fullscreen

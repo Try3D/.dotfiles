@@ -5,7 +5,7 @@ alias v='nvim'
 alias ls='exa --icons'
 alias fs='fzf --preview "bat --style=numbers --color=always --line-range :500 {}"'
 alias open='xdg-open'
-alias le='ls -la'
+alias la='ls -la'
 
 # History in cache directory:
 HISTSIZE=10000
