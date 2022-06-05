@@ -1,7 +1,5 @@
 # i3 Config
 
-bindsym $mod+m exec alacritty --command htop
-
 set $mod Mod1
 set $l n
 set $u i

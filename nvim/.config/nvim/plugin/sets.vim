@@ -21,4 +21,3 @@ set smartcase
 set ignorecase
 
 set updatetime=50
-set winbar=%f\ %m

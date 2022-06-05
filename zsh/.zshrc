@@ -24,9 +24,9 @@ bindkey -s '^f' "tmuxsessionizer\n"
 bindkey "\e[1;3C" forward-word
 bindkey "\e[1;3D" backward-word
 
-# Starship promot
-eval "$(starship init zsh)"
-
-# Sources
+# Source
 source ~/.zsh-plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
 source ~/.zsh-plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
+
+# Starship Prompt
+eval "$(starship init zsh)"
