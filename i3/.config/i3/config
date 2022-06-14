@@ -142,8 +142,8 @@ bindsym $mod+y resize shrink height 4 px or 4 ppt
 bindsym $mod+semicolon resize grow width 4 px or 4 ppt
 
 # Scratchpad
-bindsym $mod+Shift+minus move scratchpad
-bindsym $mod+minus scratchpad show
+bindsym $mod+Shift+dollar move scratchpad
+bindsym $mod+dollar scratchpad show
 
 # Custom Keybindings
 bindsym $mod+p exec --no-startup-id pcmanfm
@@ -153,8 +153,8 @@ bindsym $mod+Shift+p exec --no-startup-id ~/.local/bin/touchpadtoggle.sh
 bindsym $mod+Shift+b exec --no-startup-id ~/.local/bin/setbackground
 
 # To be executed on reload
-exec_always killall polybar; polybar &
-exec_always ~/.local/bin/setkeyboard.sh &
+exec_always --no-startup-id killall polybar; polybar &
+exec_always --no-startup-id ~/.local/bin/setkeyboard.sh &
 
 # Startup Applications
 exec --no-startup-id ~/.local/bin/i3-battery-popup &
