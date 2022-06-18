@@ -23,6 +23,7 @@ Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzy-native.nvim'
 
 Plug 'rakr/vim-one'
+Plug 'folke/tokyonight.nvim'
 Plug 'folke/todo-comments.nvim'
 Plug 'nvim-lualine/lualine.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
@@ -34,6 +35,5 @@ let mapleader = ' '
 autocmd TextYankPost * silent! lua require'vim.highlight'.on_yank({timeout = 50})
 autocmd BufWritePre * :%s/\s\+$//e
 autocmd BufWritePre *.py,*.go,*.rs | Neoformat
-autocmd VimEnter * if argc() == 0 | Explore! | endif
 
 let g:neoformat_only_msg_on_error = 1

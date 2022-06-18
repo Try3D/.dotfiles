@@ -1,5 +1,10 @@
 # i3 Config
 
+# bar {
+#     font pango:JetBrains Mono SemiBold 8
+#     status_command i3blocks
+# }
+
 set $mod Mod1
 set $l n
 set $u i
@@ -144,6 +149,9 @@ bindsym $mod+semicolon resize grow width 4 px or 4 ppt
 # Scratchpad
 bindsym $mod+Shift+dollar move scratchpad
 bindsym $mod+dollar scratchpad show
+
+# Flameshot
+bindsym Print exec --no-startup-id flameshot gui
 
 # Custom Keybindings
 bindsym $mod+p exec --no-startup-id pcmanfm
