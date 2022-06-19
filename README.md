@@ -28,3 +28,4 @@ brightnessctl
 playerctl
 git-delta
 ```
+Planning my switch from i3 to sway

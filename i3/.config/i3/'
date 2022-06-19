@@ -1,0 +1,181 @@
+# i3 Config
+
+# bar {
+#     font pango:JetBrains Mono SemiBold 8
+#     status_command i3blocks
+# }
+
+set $mod Mod1
+set $l n
+set $u i
+set $d e
+set $r o
+
+font pango: Ubuntu Mono 8
+
+# Adjust Screen Brightness
+bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl s +10%
+bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl s 10%-
+
+# Adjust audio
+set $refresh_i3status killall -SIGUSR1 i3status
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && $refresh_i3status
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && $refresh_i3status
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
+
+# Media player controls
+# bindsym XF86AudioPlay exec --no-startup-id playerctl play-pause
+# bindsym XF86AudioNext exec --no-startup-id playerctl next
+# bindsym XF86AudioPrev exec --no-startup-id playerctl previous
+
+# Notifications
+bindsym $mod+c exec --no-startup-id dunstctl history-pop
+bindsym $mod+shift+c exec --no-startup-id dunstctl close
+
+# Method of Popup
+popup_during_fullscreen leave_fullscreen
+
+# Focus
+focus_on_window_activation focus
+focus_follows_mouse no
+
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+# Borders
+hide_edge_borders smart
+for_window [class=".*"] border pixel 1
+
+# Start a terminal
+bindsym $mod+Return exec --no-startup-id alacritty
+
+# Kill focused window
+bindsym $mod+q kill
+
+# Start rofi
+bindsym $mod+r exec --no-startup-id rofi -show-icons -show run
+bindsym $mod+slash exec --no-startup-id rofi -show-icons -show window
+bindsym $mod+space exec --no-startup-id rofi -show-icons -show drun
+
+# Change focus
+bindsym $mod+$l focus left
+bindsym $mod+$d focus down
+bindsym $mod+$u focus up
+bindsym $mod+$r focus right
+# move focused window
+bindsym $mod+Shift+$l move left
+bindsym $mod+Shift+$d move down
+bindsym $mod+Shift+$u move up
+bindsym $mod+Shift+$r move right
+
+# Split Windows
+bindsym $mod+s split v
+bindsym $mod+v split h
+
+# Enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen toggle
+
+# Change container layout
+bindsym $mod+w layout tabbed
+bindsym $mod+g layout stacking
+bindsym $mod+t layout toggle split
+
+bindsym $mod+a focus parent
+bindsym $mod+Shift+a focus child
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+ctrl+space focus mode_toggle
+
+# Define names for default workspaces
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "10"
+
+# switch to workspace
+bindsym $mod+1 workspace number $ws1
+bindsym $mod+2 workspace number $ws2
+bindsym $mod+3 workspace number $ws3
+bindsym $mod+4 workspace number $ws4
+bindsym $mod+5 workspace number $ws5
+bindsym $mod+6 workspace number $ws6
+bindsym $mod+7 workspace number $ws7
+bindsym $mod+8 workspace number $ws8
+bindsym $mod+9 workspace number $ws9
+bindsym $mod+0 workspace number $ws10
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace number $ws1
+bindsym $mod+Shift+2 move container to workspace number $ws2
+bindsym $mod+Shift+3 move container to workspace number $ws3
+bindsym $mod+Shift+4 move container to workspace number $ws4
+bindsym $mod+Shift+5 move container to workspace number $ws5
+bindsym $mod+Shift+6 move container to workspace number $ws6
+bindsym $mod+Shift+7 move container to workspace number $ws7
+bindsym $mod+Shift+8 move container to workspace number $ws8
+bindsym $mod+Shift+9 move container to workspace number $ws9
+bindsym $mod+Shift+0 move container to workspace number $ws10
+
+# restart i3 inplace
+bindsym $mod+Shift+r restart
+
+# Create Log out, Reboot, Poweroff bindings
+bindsym $mod+Shift+s mode "Exit (L)ogout, (R)eboot, (P)oweroff"
+
+mode "Exit (L)ogout, (R)eboot, (P)oweroff" {
+    bindsym $mod+r exec systemctl reboot
+    bindsym $mod+l exit
+    bindsym $mod+p exec systemctl poweroff
+
+# back to normal: Enter or Escape
+    bindsym $mod+Shift+s mode "default"
+    bindsym Escape mode "default"
+}
+
+bindsym $mod+l resize shrink width 4 px or 4 ppt
+bindsym $mod+u resize grow height 4 px or 4 ppt
+bindsym $mod+y resize shrink height 4 px or 4 ppt
+bindsym $mod+semicolon resize grow width 4 px or 4 ppt
+
+# Scratchpad
+bindsym $mod+Shift+dollar move scratchpad
+bindsym $mod+dollar scratchpad show
+
+# Flameshot
+bindsym Print exec --no-startup-id flameshot gui
+
+# Custom Keybindings
+bindsym $mod+p exec --no-startup-id pcmanfm
+bindsym $mod+Escape exec --no-startup-id i3lock-fancy
+bindsym $mod+Shift+t exec --no-startup-id ~/.local/bin/togglealacrittyopacity
+bindsym $mod+Shift+p exec --no-startup-id ~/.local/bin/touchpadtoggle.sh
+bindsym $mod+Shift+b exec --no-startup-id ~/.local/bin/setbackground
+
+# To be executed on reload
+exec_always --no-startup-id killall polybar; polybar &
+exec_always --no-startup-id ~/.local/bin/setkeyboard.sh &
+
+# Startup Applications
+exec --no-startup-id ~/.local/bin/i3-battery-popup &
+exec --no-startup-id firefox &
+exec --no-startup-id picom &
+exec --no-startup-id nm-applet &
+exec --no-startup-id blueman-applet &
+exec --no-startup-id ~/.fehbg &
+
+# class                 border  backgr. text    indicator child_border
+client.focused          #DA6E89 #DA6E89 #FFFFFF #98C379   #DA6E89
+client.focused_inactive #61AFEF #61AFEF #1E222A #98C379   #61AFEF
+client.unfocused        #2C3038 #2C3038 #FFFFFF #98C379   #2C3038
+client.urgent           #C678DD #C678DD #FFFFFF #98C379   #C678DD
+client.placeholder      #1E222A #1E222A #FFFFFF #98C379   #1E222A
+client.background       #1E222A

@@ -12,12 +12,15 @@ then
 elif [ "$SELECTED" = "bin/" ]
 then
     cd ~/.dotfiles/bin/.local/bin/; nvim gotoconf
+elif [ "$SELECTED" = "foot/" ]
+then
+    cd ~/.config/foot/foot.ini
 elif [ "$SELECTED" = "i3/" ]
 then
     cd ~/.config/i3/; nvim config
 elif [ "$SELECTED" = "keyboard/" ]
 then
-    cd ~/.config/xkb/; nvim prog_ck.xkb
+    nvim ~/.config/xkb/prog_ck.xkb
 elif [ "$SELECTED" = "nvim/" ]
 then
     cd ~/.config/nvim/; nvim init.vim
@@ -27,12 +30,15 @@ then
 elif [ "$SELECTED" = "polybar/" ]
 then
     nvim ~/.config/polybar/config.ini
-elif [ "$SELECTED" = "starship/" ]
+elif [ "$SELECTED" = "sway/" ]
 then
-    nvim ~/.config/starship.toml
+    nvim ~/.config/sway/config
 elif [ "$SELECTED" = "tmux/" ]
 then
     nvim ~/.tmux.conf
+elif [ "$SELECTED" = "waybar/" ]
+then
+    cd ~/.config/waybar/; nvim config
 elif [ "$SELECTED" = "zsh/" ]
 then
     nvim ~/.zshrc
