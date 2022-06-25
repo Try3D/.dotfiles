@@ -9,8 +9,6 @@ vim.api.nvim_set_keymap('n', 'E', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
 vim.api.nvim_set_keymap('n', '<F2>', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
 vim.api.nvim_set_keymap('n', '<leader>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
 
--- Cmp Config
-
 local cmp = require('cmp')
 local kind_icons = {
     Text = "",

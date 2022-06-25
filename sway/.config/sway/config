@@ -178,9 +178,10 @@ bindsym $mod+Escape exec swaylock
 
 # Startup Applications
 exec foot --server &
-exec firefox
+exec firefox &
 exec nm-applet &
 exec blueman-applet &
-exec_always killall waybar; waybar
+exec killall waybar; waybar &
+exec_always killall waybar; waybar &
 
 include /etc/sway/config.d/*

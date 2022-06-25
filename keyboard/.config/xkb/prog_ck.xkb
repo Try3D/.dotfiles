@@ -40,10 +40,10 @@ xkb_symbols "programmer-colemak" {
     key <AD12> { [   asciicircum,           grave ] };
     key <BKSL> { [    backslash,          bar ] };
 
-    key <AC01> { [            a,            A ] };
-    key <AC02> { [            r,            R ] };
-    key <AC03> { [            s,            S ] };
-    key <AC04> { [            t,            T ] };
+    key <AC01> { [            a,            A, Home ] };
+    key <AC02> { [            r,            R, Prior ] };
+    key <AC03> { [            s,            S, Next ] };
+    key <AC04> { [            t,            T, End ] };
     key <AC05> { [            g,            G ] };
     key <AC06> { [            m,            M ] };
     key <AC07> { type="THREE_LEVEL", [            n,            N,          Left  ] };

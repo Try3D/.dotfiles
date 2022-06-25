@@ -1,5 +1,3 @@
--- Luasnip Config
-
 local ls = require("luasnip")
 
 ls.config.set_config({
@@ -37,3 +35,13 @@ require("luasnip.loaders.from_vscode").load({
     include = nil,
     exclude = {},
 })
+
+
+require'nvim-treesitter.configs'.setup {
+  ensure_installed = { "vim", "lua", "rust", "go", "python" },
+
+  highlight = {
+    enable = true,
+    additional_vim_regex_highlighting = false,
+  },
+}

@@ -16,7 +16,6 @@ i3
 polybar
 zsh
 stow
-starship
 JetBrains Mono
 Ubuntu Mono
 pcmanfm

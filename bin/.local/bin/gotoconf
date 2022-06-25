@@ -14,7 +14,7 @@ then
     cd ~/.dotfiles/bin/.local/bin/; nvim gotoconf
 elif [ "$SELECTED" = "foot/" ]
 then
-    cd ~/.config/foot/foot.ini
+    nvim ~/.config/foot/foot.ini
 elif [ "$SELECTED" = "i3/" ]
 then
     cd ~/.config/i3/; nvim config
@@ -23,7 +23,7 @@ then
     nvim ~/.config/xkb/prog_ck.xkb
 elif [ "$SELECTED" = "nvim/" ]
 then
-    cd ~/.config/nvim/; nvim init.vim
+    cd ~/.config/nvim/; nvim init.lua
 elif [ "$SELECTED" = "picom/" ]
 then
     nvim ~/.config/picom.conf
