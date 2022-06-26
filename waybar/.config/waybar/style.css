@@ -5,7 +5,7 @@
 
 window#waybar {
     background-color: rgba(28, 27, 34, 1);
-    border-bottom: 3px solid rgba(44, 48, 56, 1);
+    border-bottom: 1px solid rgba(44, 48, 56, 1);
     color: #ffffff;
     transition-property: background-color;
     transition-duration: .5s;
@@ -16,7 +16,7 @@ window#waybar.hidden {
 }
 
 #workspaces button {
-    padding: 0 5px;
+    padding: 0 4px;
     background-color: transparent;
     color: #ffffff;
     /* Use box-shadow instead of border so the text isn't offset */

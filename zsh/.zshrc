@@ -1,4 +1,3 @@
-
 # Zsh Config
 
 # Powerlevel10k instant
@@ -8,6 +7,7 @@ fi
 
 # Aliases
 alias v='nvim'
+alias r='source ranger'
 alias ls='exa --icons'
 alias fs='fzf --preview "bat --style=numbers --color=always --line-range :500 {}"'
 alias open='xdg-open'
@@ -35,5 +35,5 @@ source ~/.zsh-plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
 source ~/.zsh-plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
 source ~/.zsh-plugins/powerlevel10k/powerlevel10k.zsh-theme
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+# P10k
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

@@ -7,24 +7,18 @@ OS: Fedora
 Requirements
 
 ```
-alacritty
-ansible
-nvim
-picom
-tmux
-i3
-polybar
-zsh
-stow
-JetBrains Mono
-Ubuntu Mono
-pcmanfm
-feh
-i3-lock-fancy
-fzf
-rofi
 brightnessctl
-playerctl
-git-delta
+foot
+fzf
+JetBrains Mono
+nvim
+ranger
+rofi
+stow
+sway
+tmux
+Ubuntu Mono
+waybar
+zsh
 ```
-Planning my switch from i3 to sway
+Continuing my switch from Xorg to wayland

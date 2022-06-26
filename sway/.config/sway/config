@@ -19,8 +19,8 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 
 # Notifications
-bindsym $mod+c exec --no-startup-id dunstctl history-pop
-bindsym $mod+shift+c exec --no-startup-id dunstctl close
+bindsym $mod+c exec dunstctl history-pop
+bindsym $mod+shift+c exec dunstctl close
 
 # Method of Popup
 popup_during_fullscreen leave_fullscreen
@@ -53,7 +53,7 @@ input "type:keyboard" {
 }
 
 # Terminal
-bindsym $mod+Return exec footclient
+bindsym $mod+Return exec foot
 
 # Kill window
 bindsym $mod+q kill
@@ -86,7 +86,6 @@ bindsym $mod+y resize shrink height 4 px or 4 ppt
 bindsym $mod+semicolon resize grow width 4 px or 4 ppt
 
 # Workspaces:
-
 # Switch to workspace
 bindsym $mod+exclam workspace number 1
 bindsym $mod+bracketleft workspace number 2
@@ -149,19 +148,6 @@ mode "Exit (L)ogout, (R)eboot, (P)oweroff" {
     bindsym Escape mode "default"
 }
 
-# bar {
-#     position top
-
-#     font pango: JetBrains Mono 8
-#     status_command i3status
-
-#     colors {
-#         statusline #ffffff
-#         background #1c1b22
-#         inactive_workspace #1c1b22 #1c1b22 #ffffff
-#     }
-# }
-
 output * bg $HOME/.local/share/backgrounds/Krita.png fill
 
 # class                 border  backgr. text    indicator child_border
@@ -173,15 +159,15 @@ client.placeholder      #1E222A #1E222A #FFFFFF #98C379   #1E222A
 client.background       #1E222A
 
 # Custom Keybindings
-bindsym $mod+p exec pcmanfm
+bindsym $mod+p exec foot -e ranger
 bindsym $mod+Escape exec swaylock
 
 # Startup Applications
-exec foot --server &
 exec firefox &
 exec nm-applet &
 exec blueman-applet &
-exec killall waybar; waybar &
-exec_always killall waybar; waybar &
+exec ~/.local/bin/sway-battery-popup &
+
+exec_always ~/.local/bin/waybar.sh
 
 include /etc/sway/config.d/*
