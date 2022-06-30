@@ -1,4 +1,4 @@
--- Mappings.
+-- Mappings
 local opts = { noremap=true, silent=true }
 vim.api.nvim_set_keymap('n', 'K', '<cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
 vim.api.nvim_set_keymap('n', 'H', '<cmd>lua vim.diagnostic.goto_next()<CR>', opts)
@@ -40,7 +40,6 @@ local kind_icons = {
 
 cmp.setup({
   sources = cmp.config.sources({
-      { name = 'luasnip' },
       { name = 'nvim_lsp' },
       { name = 'path' },
       { name = 'buffer' },
@@ -54,19 +53,12 @@ cmp.setup({
   },
 
 
-  snippet = {
-    expand = function(args)
-        require('luasnip').lsp_expand(args.body)
-    end,
-  },
-
   formatting = {
     format = function(entry, vim_item)
       vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind)
       vim_item.menu = ({
         buffer = "[buf]",
         nvim_lsp = "[LSP]",
-        luasnip = "[SNIP]",
         path = "[PATH]"
       })[entry.source.name]
       return vim_item
@@ -76,6 +68,20 @@ cmp.setup({
 
 -- Configure Lsp Servers
 
-require('lspconfig').gopls.setup {capablities = capablities}
-require('lspconfig').pyright.setup {capablities = capablities}
-require('lspconfig').rust_analyzer.setup{capablities = capablities}
+require('lspconfig').pyright.setup{}
+
+require('lspconfig').sumneko_lua.setup{
+  settings = {
+    Lua = {
+      runtime = {
+        version = 'LuaJIT',
+      },
+      diagnostics = {
+        globals = {'vim'},
+      },
+      workspace = {
+        library = vim.api.nvim_get_runtime_file("", true),
+      },
+    },
+  },
+}

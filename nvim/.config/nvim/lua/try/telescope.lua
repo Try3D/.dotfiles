@@ -19,13 +19,3 @@ require('telescope').setup {
 }
 
 require('telescope').load_extension('fzy_native')
-
-vim.api.nvim_set_keymap("n", "<C-p>", ":lua require('telescope.builtin').find_files()<CR>", {noremap = true})
-vim.api.nvim_set_keymap("n", "<C-f>g", ":lua require('telescope.builtin').git_files()<CR>", {noremap = true})
-vim.api.nvim_set_keymap("n", "<C-f>r", ":lua require('telescope.builtin').live_grep()<CR>", {noremap = true})
-vim.api.nvim_set_keymap("n", "<C-f>b", ":lua require('telescope.builtin').buffers()<CR>", {noremap = true})
-vim.api.nvim_set_keymap("n", "<leader>ds", ":lua require('telescope.builtin').diagnostics()<CR>", {noremap = true})
-
-vim.api.nvim_set_keymap("n", "<leader>gb", ":lua require('telescope.builtin').git_branches()<CR>", {noremap = true})
-vim.api.nvim_set_keymap("n", "<leader>gm", ":lua require('telescope.builtin').git_commits()<CR>", {noremap = true})
-vim.api.nvim_set_keymap("n", "<leader>gst", ":lua require('telescope.builtin').git_status()<CR>", {noremap = true})
