@@ -1,5 +1,3 @@
-vim.cmd [[packadd packer.nvim]]
-
 return require('packer').startup(function()
 
   use { 'kevinhwang91/nvim-bqf'}
@@ -20,6 +18,7 @@ return require('packer').startup(function()
   use { 'nvim-telescope/telescope-fzy-native.nvim' }
 
   use { 'TimUntersberger/neogit' }
+
   use { 'folke/tokyonight.nvim' }
   use { 'nvim-lualine/lualine.nvim' }
   use { 'kyazdani42/nvim-web-devicons' }

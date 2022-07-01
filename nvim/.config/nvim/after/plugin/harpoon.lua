@@ -1,5 +1,4 @@
 local Remap = require("try.keymap")
-
 local nnoremap = Remap.nnoremap
 
 nnoremap("<leader>hm", ":lua require('harpoon.ui').toggle_quick_menu()<CR>")

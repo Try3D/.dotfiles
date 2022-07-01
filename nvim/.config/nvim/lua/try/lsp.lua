@@ -1,13 +1,15 @@
 -- Mappings
-local opts = { noremap=true, silent=true }
-vim.api.nvim_set_keymap('n', 'K', '<cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
-vim.api.nvim_set_keymap('n', 'H', '<cmd>lua vim.diagnostic.goto_next()<CR>', opts)
 
-vim.api.nvim_set_keymap('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
-vim.api.nvim_set_keymap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
-vim.api.nvim_set_keymap('n', 'E', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
-vim.api.nvim_set_keymap('n', '<F2>', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
-vim.api.nvim_set_keymap('n', '<leader>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
+local Remap = require("try.keymap")
+local nnoremap = Remap.nnoremap
+
+nnoremap('G','<cmd>lua vim.diagnostic.goto_prev()<CR>')
+nnoremap('M', '<cmd>lua vim.diagnostic.goto_next()<CR>')
+nnoremap('gd', '<cmd>lua vim.lsp.buf.definition()<CR>')
+nnoremap('gr', '<cmd>lua vim.lsp.buf.references()<CR>')
+nnoremap('E', '<cmd>lua vim.lsp.buf.hover()<CR>')
+nnoremap('<F2>', '<cmd>lua vim.lsp.buf.rename()<CR>')
+nnoremap('<leader>f', '<cmd>lua vim.lsp.buf.formatting()<CR>')
 
 local cmp = require('cmp')
 local kind_icons = {
@@ -46,12 +48,11 @@ cmp.setup({
   }),
 
   mapping = {
-      ['<C-s>'] = cmp.mapping.confirm({ select = true }),
+      ['<C-y>'] = cmp.mapping.confirm({ select = true }),
       ['<C-p>'] = cmp.mapping.select_prev_item(),
       ['<C-n>'] = cmp.mapping.select_next_item(),
       ['<C-Space>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
   },
-
 
   formatting = {
     format = function(entry, vim_item)
@@ -67,21 +68,14 @@ cmp.setup({
 })
 
 -- Configure Lsp Servers
-
 require('lspconfig').pyright.setup{}
 
 require('lspconfig').sumneko_lua.setup{
   settings = {
     Lua = {
-      runtime = {
-        version = 'LuaJIT',
-      },
-      diagnostics = {
-        globals = {'vim'},
-      },
-      workspace = {
-        library = vim.api.nvim_get_runtime_file("", true),
-      },
+      runtime = {version = 'LuaJIT'},
+      diagnostics = {globals = ('vim')},
+      workspace = {library = vim.api.nvim_get_runtime_file("", true)}
     },
   },
 }
