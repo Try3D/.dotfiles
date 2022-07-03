@@ -2,23 +2,20 @@
 
 My Dotfiles for linux
 
-OS: Fedora
-
 Requirements
 
 ```
-brightnessctl
-foot
-fzf
-JetBrains Mono
 nvim
-ranger
-rofi
-stow
 sway
-tmux
-Ubuntu Mono
 waybar
+foot
+rofi
 zsh
+ranger
+tmux
+fzf
+stow
+brightnessctl
+JetBrains Mono
+Ubuntu Mono
 ```
-Continuing my switch from Xorg to wayland
