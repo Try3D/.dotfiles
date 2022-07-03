@@ -8,4 +8,8 @@ else
     SELECTED=`shuf -e * | rofi -dmenu`
 fi
 
-feh --bg-fill $SELECTED
+ --bg-fill $SELECTED
+
+killall swaybg
+
+swaybg -i $SELECTED -m fill

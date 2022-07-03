@@ -12,17 +12,17 @@ xkb_symbols "programmer-colemak" {
     include "us(basic)"
     name[Group1]= "English (Programmer Colemak)";
 
-    key <TLDE> { [        dollar,   asciitilde ] };
-    key <AE01> { [       exclam,            1, 1  ] };
-    key <AE02> { [  bracketleft,            2, 2] };
-    key <AE03> { [    braceleft,            3, 3] };
+    key <TLDE> { [       dollar,   asciitilde ] };
+    key <AE01> { [       exclam,            1, 1 ] };
+    key <AE02> { [  bracketleft,            2, 2 ] };
+    key <AE03> { [    braceleft,            3, 3 ] };
     key <AE04> { [    parenleft,            4, 4 ] };
-    key <AE05> { [      percent,            5, 5] };
-    key <AE06> { [       numbersign,            6, 6] };
+    key <AE05> { [      percent,            5, 5 ] };
+    key <AE06> { [   numbersign,            6, 6 ] };
     key <AE07> { [   parenright,            7, 7 ] };
-    key <AE08> { [   braceright,            8, 8] };
-    key <AE09> { [ bracketright,            9, 9] };
-    key <AE10> { [     asterisk,            0, 0] };
+    key <AE08> { [   braceright,            8, 8 ] };
+    key <AE09> { [ bracketright,            9, 9 ] };
+    key <AE10> { [     asterisk,            0, 0 ] };
     key <AE11> { [        minus,   underscore ] };
     key <AE12> { [        equal,         plus ] };
 
@@ -35,21 +35,21 @@ xkb_symbols "programmer-colemak" {
     key <AD07> { [            l,            L ] };
     key <AD08> { [            u,            U ] };
     key <AD09> { [            y,            Y ] };
-    key <AD10> { [    semicolon,  ampersand ] };
-    key <AD11> { [        colon,    at ] };
-    key <AD12> { [   asciicircum,           grave ] };
+    key <AD10> { [    semicolon,    ampersand ] };
+    key <AD11> { [        colon,           at ] };
+    key <AD12> { [  asciicircum,        grave ] };
     key <BKSL> { [    backslash,          bar ] };
 
-    key <AC01> { [            a,            A ] };
-    key <AC02> { [            r,            R ] };
-    key <AC03> { [            s,            S ] };
-    key <AC04> { [            t,            T ] };
+    key <AC01> { [            a,            A,    Home ] };
+    key <AC02> { [            r,            R,   Prior ] };
+    key <AC03> { [            s,            S,    Next ] };
+    key <AC04> { [            t,            T,     End ] };
     key <AC05> { [            g,            G ] };
     key <AC06> { [            m,            M ] };
-    key <AC07> { type="THREE_LEVEL", [            n,            N,          Left  ] };
-    key <AC08> { type="THREE_LEVEL", [            e,            E,          Down  ] };
-    key <AC09> { type="THREE_LEVEL", [            i,            I,          Up    ] };
-    key <AC10> { type="THREE_LEVEL", [            o,            O,          Right ] };
+    key <AC07> { type="THREE_LEVEL", [ n,    N,    Left ] };
+    key <AC08> { type="THREE_LEVEL", [ e,    E,    Down ] };
+    key <AC09> { type="THREE_LEVEL", [ i,    I,      Up ] };
+    key <AC10> { type="THREE_LEVEL", [ o,    O,   Right ] };
     key <AC11> { [   apostrophe,     quotedbl ] };
 
     key <AB01> { [            x,            X ] };

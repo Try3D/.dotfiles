@@ -1,0 +1,178 @@
+# Sway Config
+
+seat seat0 xcursor_theme "Future-cyan-cursors"
+exec_always gsettings set org.gnome.desktop.interface cursor-theme "Future-cyan-cursors"
+
+set {
+    $mod Mod1
+    $left n
+    $down e
+    $up i
+    $right o
+}
+
+font pango: Ubuntu Mono 8
+
+# Adjust Screen Brightness
+bindsym XF86MonBrightnessUp exec brightnessctl s +10%
+bindsym XF86MonBrightnessDown exec brightnessctl s 10%-
+
+# Adjust audio
+set $refresh_i3status killall -SIGUSR1 i3status
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && $refresh_i3status
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && $refresh_i3status
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
+
+# Notifications
+bindsym $mod+c exec dunstctl history-pop
+bindsym $mod+shift+c exec dunstctl close
+
+# Method of Popup
+popup_during_fullscreen leave_fullscreen
+
+# Focus
+focus_on_window_activation focus
+focus_follows_mouse no
+
+# Borders
+hide_edge_borders smart
+default_border pixel
+default_floating_border pixel
+
+# Idle configuration
+exec swayidle -w \
+         timeout 300 'swaylock -f -c 000000' \
+         timeout 600 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
+         before-sleep 'swaylock -f -c 000000'
+
+# Input configuration
+input "1267:12448:ELAN0708:00_04F3:30A0_Touchpad" {
+    dwt enabled
+    natural_scroll disabled
+    middle_emulation enabled
+}
+
+input "type:keyboard" {
+    xkb_file ~/.config/xkb/prog_ck.xkb
+}
+
+# Terminal
+bindsym $mod+Return exec foot
+
+# Kill window
+bindsym $mod+q kill
+
+# Start launcher
+bindsym $mod+r exec rofi -show run
+bindsym $mod+space exec rofi -show drun
+
+# Floating
+floating_modifier $mod normal
+
+# Reload the configuration file
+bindsym $mod+Shift+r reload
+
+# Move your focus around
+bindsym $mod+$left focus left
+bindsym $mod+$down focus down
+bindsym $mod+$up focus up
+bindsym $mod+$right focus right
+# Move the focused window with the same, but add Shift
+bindsym $mod+Shift+$left move left
+bindsym $mod+Shift+$down move down
+bindsym $mod+Shift+$up move up
+bindsym $mod+Shift+$right move right
+
+# Resize windows
+bindsym $mod+l resize shrink width 4 px or 4 ppt
+bindsym $mod+u resize grow height 4 px or 4 ppt
+bindsym $mod+y resize shrink height 4 px or 4 ppt
+bindsym $mod+semicolon resize grow width 4 px or 4 ppt
+
+# Workspaces:
+# Switch to workspace
+bindsym $mod+exclam workspace number 1
+bindsym $mod+bracketleft workspace number 2
+bindsym $mod+braceleft workspace number 3
+bindsym $mod+parenleft workspace number 4
+bindsym $mod+percent workspace number 5
+bindsym $mod+numbersign workspace number 6
+bindsym $mod+parenright workspace number 7
+bindsym $mod+braceright workspace number 8
+bindsym $mod+bracketright workspace number 9
+bindsym $mod+asterisk workspace number 10
+# Move focused container to workspace
+bindsym $mod+Shift+exclam move container to workspace number 1
+bindsym $mod+Shift+bracketleft move container to workspace number 2
+bindsym $mod+Shift+braceleft move container to workspace number 3
+bindsym $mod+Shift+parenleft move container to workspace number 4
+bindsym $mod+Shift+percent move container to workspace number 5
+bindsym $mod+Shift+numbersign move container to workspace number 6
+bindsym $mod+Shift+parenright move container to workspace number 7
+bindsym $mod+Shift+braceright move container to workspace number 8
+bindsym $mod+Shift+bracketright move container to workspace number 9
+bindsym $mod+Shift+asterisk move container to workspace number 10
+
+# Splits
+bindsym $mod+v splith
+bindsym $mod+s splitv
+
+# Switch the current container between different layout styles
+bindsym $mod+g layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+t layout toggle split
+
+# Make the current focus fullscreen
+bindsym $mod+f fullscreen
+
+# Toggle the current focus between tiling and floating mode
+bindsym $mod+Shift+space floating toggle
+
+# Swap focus between the tiling area and the floating area
+bindsym $mod+ctrl+space focus mode_toggle
+
+# Move focus to the parent container
+bindsym $mod+a focus parent
+bindsym $mod+shift+a focus child
+
+# Scratchpad
+bindsym $mod+Shift+dollar move scratchpad
+bindsym $mod+dollar scratchpad show
+
+# Create Log out, Reboot, Poweroff bindings
+bindsym $mod+Shift+s mode "Exit (L)ogout, (R)eboot, (P)oweroff"
+
+mode "Exit (L)ogout, (R)eboot, (P)oweroff" {
+    bindsym $mod+r exec systemctl reboot
+    bindsym $mod+l exit
+    bindsym $mod+p exec systemctl poweroff
+
+# back to normal: Enter or Escape
+    bindsym $mod+Shift+s mode "default"
+    bindsym Escape mode "default"
+}
+
+output * bg $HOME/.local/share/backgrounds/Krita.png fill
+
+# class                 border  backgr. text    indicator child_border
+client.focused          #DA6E89 #DA6E89 #FFFFFF #98C379   #DA6E89
+client.focused_inactive #61AFEF #61AFEF #1E222A #98C379   #61AFEF
+client.unfocused        #2C3038 #2C3038 #FFFFFF #98C379   #2C3038
+client.urgent           #C678DD #C678DD #FFFFFF #98C379   #C678DD
+client.placeholder      #1E222A #1E222A #FFFFFF #98C379   #1E222A
+client.background       #1E222A
+
+# Custom Keybindings
+bindsym $mod+p exec foot -e ranger
+bindsym $mod+Escape exec swaylock
+bindsym $mod+shift+b exec ~/.local/bin/setbackground
+
+# Startup Applications
+exec firefox &
+exec nm-applet &
+exec blueman-applet &
+exec ~/.local/bin/sway-battery-popup &
+
+exec_always ~/.local/bin/waybar.sh
+
+include /etc/sway/config.d/*
