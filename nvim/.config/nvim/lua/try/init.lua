@@ -1,5 +1,3 @@
-local autocmd = vim.api.nvim_create_autocmd
-
 require("try.lsp")
 require("try.lualine")
 require("try.neogit")

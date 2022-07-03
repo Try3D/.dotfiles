@@ -1,17 +1,4 @@
--- Mappings
-
-local Remap = require("try.keymap")
-local nnoremap = Remap.nnoremap
-
-nnoremap('G','<cmd>lua vim.diagnostic.goto_prev()<CR>')
-nnoremap('M', '<cmd>lua vim.diagnostic.goto_next()<CR>')
-nnoremap('gd', '<cmd>lua vim.lsp.buf.definition()<CR>')
-nnoremap('gr', '<cmd>lua vim.lsp.buf.references()<CR>')
-nnoremap('E', '<cmd>lua vim.lsp.buf.hover()<CR>')
-nnoremap('<F2>', '<cmd>lua vim.lsp.buf.rename()<CR>')
-nnoremap('<leader>f', '<cmd>lua vim.lsp.buf.formatting()<CR>')
-
-local cmp = require('cmp')
+local cmp = require("cmp")
 local kind_icons = {
     Text = "",
     Method = "",
@@ -43,6 +30,7 @@ local kind_icons = {
 cmp.setup({
   sources = cmp.config.sources({
       { name = 'nvim_lsp' },
+      { name = 'luasnip' },
       { name = 'path' },
       { name = 'buffer' },
   }),
@@ -54,13 +42,20 @@ cmp.setup({
       ['<C-Space>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
   },
 
+  snippet = {
+    expand = function(args)
+        require('luasnip').lsp_expand(args.body)
+    end,
+  },
+
   formatting = {
     format = function(entry, vim_item)
       vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind)
       vim_item.menu = ({
         buffer = "[buf]",
         nvim_lsp = "[LSP]",
-        path = "[PATH]"
+        path = "[PATH]",
+        luasnip = "[SNIP]",
       })[entry.source.name]
       return vim_item
     end

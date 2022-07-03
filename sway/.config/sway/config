@@ -3,11 +3,13 @@
 seat seat0 xcursor_theme "Future-cyan-cursors"
 exec_always gsettings set org.gnome.desktop.interface cursor-theme "Future-cyan-cursors"
 
-set $mod Mod1
-set $left n
-set $down e
-set $up i
-set $right o
+set {
+    $mod Mod1
+    $left n
+    $down e
+    $up i
+    $right o
+}
 
 font pango: Ubuntu Mono 8
 
@@ -42,7 +44,6 @@ exec swayidle -w \
          timeout 300 'swaylock -f -c 000000' \
          timeout 600 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
          before-sleep 'swaylock -f -c 000000'
-
 
 # Input configuration
 input "1267:12448:ELAN0708:00_04F3:30A0_Touchpad" {
@@ -164,6 +165,7 @@ client.background       #1E222A
 # Custom Keybindings
 bindsym $mod+p exec foot -e ranger
 bindsym $mod+Escape exec swaylock
+bindsym $mod+shift+b exec ~/.local/bin/setbackground
 
 # Startup Applications
 exec firefox &

@@ -15,7 +15,7 @@ vim.opt.termguicolors=true
 
 vim.opt.swapfile=false
 vim.opt.backup=false
-vim.opt.undodir = os.getenv("HOME") .. "/.config/nvim/undodir/"
+vim.opt.undodir = os.getenv("HOME") .. "/.config/undodir/"
 vim.opt.undofile=true
 
 vim.opt.smartcase=true

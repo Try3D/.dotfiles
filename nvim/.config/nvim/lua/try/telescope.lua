@@ -1,8 +1,8 @@
 -- Telescope Config
 
-require('telescope').setup {
+require("telescope").setup {
   defaults = {
-    file_sorter = require('telescope.sorters').get_fzy_sorter,
+    file_sorter = require("telescope.sorters").get_fzy_sorter,
     mappings = {
       i = {
         ["<esc>"] = require("telescope.actions").close,
@@ -18,4 +18,4 @@ require('telescope').setup {
     }
 }
 
-require('telescope').load_extension('fzy_native')
+require("telescope").load_extension("fzy_native")

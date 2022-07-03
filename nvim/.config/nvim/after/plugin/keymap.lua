@@ -16,7 +16,9 @@ nnoremap("<leader>e", "<C-w>j")
 nnoremap("<leader>i", "<C-w>k")
 nnoremap("<leader>o", "<C-w>l")
 
--- nnoremap("N", ":vertical resize -2<CR>")
--- nnoremap("I", ":resize -2<CR>")
--- nnoremap("E", ":resize +2<CR>")
--- nnoremap("O", ":vertical resize +2<CR>")
+nnoremap("'n", ":vertical resize -4<CR>")
+nnoremap("'e", ":resize -4<CR>")
+nnoremap("'i", ":resize +4<CR>")
+nnoremap("'o", ":vertical resize +4<CR>")
+
+nnoremap("<leader>u", "<cmd>UndotreeToggle<CR>")
