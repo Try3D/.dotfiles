@@ -6,5 +6,5 @@ local nnoremap = Remap.nnoremap
 neogit.setup {}
 
 nnoremap("<leader>gs", function()
-    neogit.open({ })
+    neogit.open({})
 end);

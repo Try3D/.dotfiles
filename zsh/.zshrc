@@ -26,7 +26,6 @@ export PATH=$PATH:$HOME/.local/bin
 export PATH=$PATH:/usr/local/go/bin
 
 # Keybindings
-bindkey -s '^w' "gotoconf\n"
 bindkey -s '^f' "tmuxsessionizer\n"
 bindkey "\e[1;3C" forward-word
 bindkey "\e[1;3D" backward-word

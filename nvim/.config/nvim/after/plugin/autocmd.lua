@@ -1,6 +1,8 @@
+local TryGroup = vim.api.nvim_create_augroup("Try", { clear = true })
 local autocmd = vim.api.nvim_create_autocmd
 
 autocmd("TextYankPost", {
+    group = TryGroup,
     pattern = "*",
     callback = function()
         vim.highlight.on_yank({
@@ -9,7 +11,14 @@ autocmd("TextYankPost", {
     end,
 })
 
-autocmd({"BufWritePre"}, {
+autocmd("BufWritePre", {
+    group = TryGroup,
     pattern = "*",
     command = "%s/\\s\\+$//e",
+})
+
+autocmd("BufWritePre", {
+    group = TryGroup,
+    pattern = "*.lua",
+    command = "lua vim.lsp.buf.format()"
 })
