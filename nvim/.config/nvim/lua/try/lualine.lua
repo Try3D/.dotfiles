@@ -9,7 +9,7 @@ require("lualine").setup {
         lualine_a = { "mode" },
         lualine_b = { "branch" },
         lualine_c = { "filename" },
-        lualine_x = { "filetype" },
+        lualine_x = { "diagnostics", "filetype" },
         lualine_y = { "progress" },
         lualine_z = { "location" }
     },
@@ -17,4 +17,5 @@ require("lualine").setup {
         lualine_c = { "filename" },
         lualine_x = { "filetype" },
     },
+    extensions = { 'quickfix' }
 }
