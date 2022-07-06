@@ -1,5 +1,7 @@
 return require("packer").startup(function()
 
+    use { "wbthomason/packer.nvim" }
+
     use { "neovim/nvim-lspconfig" }
     use { "hrsh7th/nvim-cmp" }
     use { "hrsh7th/cmp-nvim-lsp" }
@@ -12,19 +14,17 @@ return require("packer").startup(function()
     use { "Raimondi/delimitMate" }
     use { "tpope/vim-commentary" }
     use { "tpope/vim-surround" }
+    use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" }
 
-    use { "ThePrimeagen/harpoon" }
-    use { "nvim-lua/plenary.nvim" }
-    use { "nvim-telescope/telescope.nvim" }
-
-    use { "folke/tokyonight.nvim" }
-    use { "kyazdani42/nvim-web-devicons" }
-    use { "nvim-treesitter/nvim-treesitter" }
-
-    use { "rafamadriz/neon" }
-    use { "nvim-lualine/lualine.nvim" }
     use { "TimUntersberger/neogit" }
     use { "mbbill/undotree" }
+    use { "folke/tokyonight.nvim" }
+    use { "nvim-lualine/lualine.nvim" }
+    use { "kyazdani42/nvim-web-devicons" }
 
-    use { "wbthomason/packer.nvim" }
+    use { "nvim-telescope/telescope.nvim" }
+    use { "nvim-lua/plenary.nvim" }
+    use { "nvim-telescope/telescope-fzf-native.nvim", run = "make" }
+    use { "ThePrimeagen/harpoon" }
+
 end)

@@ -7,11 +7,13 @@ require("nvim-treesitter.configs").setup {
         "bash",
         "lua",
         "rust",
-        "go",
         "python",
         "go"
     },
     highlight = {
         enable = true,
     },
+    indent = {
+        enable = true,
+    }
 }
