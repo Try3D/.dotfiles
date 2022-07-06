@@ -13,9 +13,11 @@ return require("packer").startup(function()
     use { "tpope/vim-commentary" }
     use { "tpope/vim-surround" }
 
+    use { 'nvim-telescope/telescope.nvim',
+        requires = { 'nvim-lua/plenary.nvim' } }
     use { "ThePrimeagen/harpoon" }
-    use { "nvim-lua/plenary.nvim" }
-    use { "nvim-telescope/telescope.nvim" }
+    use { 'nvim-telescope/telescope-fzf-native.nvim',
+        run = 'make' }
 
     use { "folke/tokyonight.nvim" }
     use { "kyazdani42/nvim-web-devicons" }
