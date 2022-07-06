@@ -19,19 +19,14 @@ return require("packer").startup(function()
 
     use { "TimUntersberger/neogit" }
     use { "mbbill/undotree" }
-    
-    use { 'nvim-telescope/telescope.nvim',
-    use { 'nvim-lua/plenary.nvim' }
+
+    use { "nvim-telescope/telescope.nvim" }
+    use { "nvim-lua/plenary.nvim" }
     use { "ThePrimeagen/harpoon" }
-    use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
+    use { "nvim-telescope/telescope-fzf-native.nvim", run = "make" }
 
     use { "folke/tokyonight.nvim" }
     use { "nvim-lualine/lualine.nvim" }
     use { "kyazdani42/nvim-web-devicons" }
-
-    use { "nvim-telescope/telescope.nvim" }
-    use { "nvim-lua/plenary.nvim" }
-    use { "nvim-telescope/telescope-fzf-native.nvim", run = "make" }
-    use { "ThePrimeagen/harpoon" }
 
 end)
