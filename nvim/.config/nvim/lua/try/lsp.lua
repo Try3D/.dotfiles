@@ -11,7 +11,7 @@ nnoremap("<leader>lo", "<cmd>lua vim.diagnostic.setloclist()<CR>")
 local on_attach = function()
 
     nnoremap("gd", "<cmd>lua vim.lsp.buf.definition()<CR>")
-    nnoremap("<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>")
+    nnoremap("ca", "<cmd>lua vim.lsp.buf.code_action()<CR>")
     nnoremap("gr", "<cmd>lua vim.lsp.buf.references()<CR>")
 
     nnoremap("K", "<cmd>lua vim.lsp.buf.hover()<CR>")

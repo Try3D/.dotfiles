@@ -16,7 +16,6 @@ return require("packer").startup(function()
     use { "tpope/vim-surround" }
     use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" }
 
-
     use { "TimUntersberger/neogit" }
     use { "mbbill/undotree" }
 
