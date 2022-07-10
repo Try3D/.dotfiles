@@ -1,19 +1,24 @@
 require("nvim-treesitter.configs").setup {
-    ensure_installed = {
-        "markdown",
-        "make",
-        "toml",
-        "yaml",
-        "bash",
-        "lua",
-        "rust",
-        "python",
-        "go"
-    },
+    ignore_install = { "vala" },
+    ensure_installed = "all",
+    sync_install = false,
+
     highlight = {
         enable = true,
+        additional_vim_regex_highlighting = false,
     },
-    indent = {
+
+    incremental_selection = {
         enable = true,
-    }
+        keymaps = {
+            init_selection = "gnn",
+            node_incremental = "grn",
+            scope_incremental = "grc",
+            node_decremental = "grm",
+        },
+    },
+
+    indent = {
+        enable = true
+    },
 }
