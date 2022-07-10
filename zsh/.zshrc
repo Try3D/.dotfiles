@@ -25,6 +25,8 @@ export PATH=$PATH:$HOME/.local/sumneko/bin/
 export PATH=$PATH:$HOME/.local/bin
 export PATH=$PATH:/usr/local/go/bin
 
+export TERM=xterm-256color
+
 # Keybindings
 bindkey -s '^f' "tmuxsessionizer\n"
 bindkey -s '^w' "gotoconf\n"

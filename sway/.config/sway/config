@@ -63,8 +63,8 @@ bindsym $mod+Return exec foot
 bindsym $mod+q kill
 
 # Start launcher
-bindsym $mod+r exec rofi -show run
-bindsym $mod+space exec rofi -show drun
+bindsym $mod+r exec  dmenu_path | dmenu -i | xargs swaymsg exec --
+bindsym $mod+space exec ~/.local/bin/dmenu_desktop | dmenu -i | ~/.local/bin/dmenu_desktop -e
 
 # Floating
 floating_modifier $mod normal
@@ -175,4 +175,4 @@ exec ~/.local/bin/sway-battery-popup &
 
 exec_always ~/.local/bin/waybar.sh
 
-                                                    include /etc/sway/config.d/*
+include /etc/sway/config.d/*

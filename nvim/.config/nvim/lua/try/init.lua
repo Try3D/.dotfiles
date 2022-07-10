@@ -1,3 +1,4 @@
+require("try.cmp")
 require("try.lsp")
 require("try.lualine")
 require("try.neogit")

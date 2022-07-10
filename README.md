@@ -9,7 +9,7 @@ nvim
 sway
 waybar
 foot
-rofi
+dmenu
 zsh
 ranger
 tmux

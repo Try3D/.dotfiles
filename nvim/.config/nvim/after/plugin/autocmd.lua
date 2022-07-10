@@ -1,4 +1,4 @@
-local TryGroup = vim.api.nvim_create_augroup("Try", { clear = true })
+local TryGroup = vim.api.nvim_create_augroup("try", { clear = true })
 local autocmd = vim.api.nvim_create_autocmd
 
 autocmd("TextYankPost", {
