@@ -24,3 +24,4 @@ vim.opt.ignorecase = true
 vim.opt.updatetime = 50
 
 vim.g.mapleader = " "
+vim.g.glow_border = "rounded"

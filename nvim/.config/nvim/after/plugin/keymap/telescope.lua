@@ -1,24 +1,26 @@
 local Remap = require("try.keymap")
 local nnoremap = Remap.nnoremap
 
+local telescope = require("telescope.builtin")
+
 nnoremap("<C-p>", function()
-    require("telescope.builtin").find_files()
+    telescope.find_files()
 end)
 
 nnoremap("<leader>fr", function()
-    require("telescope.builtin").git_files()
+    telescope.git_files()
 end)
 
 nnoremap("<leader>fb", function()
-    require("telescope.builtin").buffers()
+    telescope.buffers()
 end)
 
 nnoremap("<leader>fr", function()
-    require("telescope.builtin").live_grep()
+    telescope.live_grep()
 end)
 
 nnoremap("<C-/>", function()
-    require("telescope.builtin").current_buffer_fuzzy_find({
+    telescope.current_buffer_fuzzy_find({
         sorting_strategy = "ascending",
     })
 end)

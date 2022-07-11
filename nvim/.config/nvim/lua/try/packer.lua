@@ -23,6 +23,8 @@ return require("packer").startup(function()
     use { "ThePrimeagen/harpoon" }
     use { "nvim-telescope/telescope-fzf-native.nvim", run = "make" }
 
+    use { "ellisonleao/glow.nvim" }
+
     use { "folke/tokyonight.nvim" }
     use { "nvim-lualine/lualine.nvim" }
     use { "kyazdani42/nvim-web-devicons" }
