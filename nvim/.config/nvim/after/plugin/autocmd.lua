@@ -19,6 +19,6 @@ autocmd("BufWritePre", {
 
 autocmd("BufWritePre", {
     group = TryGroup,
-    pattern = "*.lua",
+    pattern = { "*.lua", "*.go" },
     command = "lua vim.lsp.buf.format()"
 })

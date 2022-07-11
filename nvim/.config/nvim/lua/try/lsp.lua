@@ -13,15 +13,18 @@ local on_attach = function()
 
     nnoremap("K", "<cmd>lua vim.lsp.buf.hover()<CR>")
     nnoremap("<F2>", "<cmd>lua vim.lsp.buf.rename()<CR>")
-    nnoremap("<leader>f", "<cmd>lua vim.lsp.buf.format()<CR>")
+    nnoremap("<leader>fm", "<cmd>lua vim.lsp.buf.format()<CR>")
 end
 
 -- Configure Lsp Servers
-require('lspconfig').pyright.setup {
-    on_attach = on_attach
-}
 
-require('lspconfig').sumneko_lua.setup {
+require("lspconfig").gopls.setup { on_attach = on_attach }
+
+require("lspconfig").pyright.setup { on_attach = on_attach }
+
+require("lspconfig").rust_analyzer.setup { on_attach = on_attach }
+
+require("lspconfig").sumneko_lua.setup {
     on_attach = on_attach,
     settings = {
         Lua = {
@@ -31,3 +34,5 @@ require('lspconfig').sumneko_lua.setup {
         },
     },
 }
+
+require("lspconfig").tsserver.setup { on_attach = on_attach }

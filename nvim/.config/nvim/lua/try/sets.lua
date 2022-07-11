@@ -22,6 +22,5 @@ vim.opt.smartcase = true
 vim.opt.ignorecase = true
 
 vim.opt.updatetime = 50
-vim.opt.autoread = true
 
 vim.g.mapleader = " "

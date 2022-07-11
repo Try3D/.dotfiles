@@ -5,11 +5,12 @@ cd ~/.local/share/backgrounds/
 if [ "$1" = "-r" -o "$1" = "--random" ]; then
     SELECTED=`shuf -e * | shuf -n 1`
 else
-    SELECTED=`shuf -e * | rofi -dmenu`
+    SELECTED=`shuf -e * |  dmenu -i -fn "JetBrains Mono:pixelsize=16" -nb "#1a1b26" -nf "#c0caf5" -sb "#9ece6a" -sf "#15161E" -p "Bg"`
+
 fi
 
- --bg-fill $SELECTED
+rm ~/.config/sway/background
 
-killall swaybg
+echo output \* bg $HOME/.local/share/backgrounds/$SELECTED fill >> ~/.config/sway/background
 
-swaybg -i $SELECTED -m fill
+sway reload
