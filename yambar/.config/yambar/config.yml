@@ -1,0 +1,131 @@
+font: &font JetBrains Mono:size=12:style=semibold
+underline: &underline {underline: { size: 2, color: bb9af7FF}}
+
+bar:
+  location: top
+  height: 22
+  font: *font
+  background: 1a1b26FF
+  foreground: c0caf5FF
+  spacing: 8
+  margin: 0
+
+  left:
+    - i3:
+        sort: ascending
+        anchors:
+          - string: &i3_common {margin: 7, on-click: "swaymsg --quiet workspace {name}"}
+          - string: &default {<<: *i3_common, text: "{name}"}
+          - focused: &focused
+              deco: {stack: [ *underline]}
+          - invisible: &invisible {foreground: ffffff55}
+          - urgent: &urgent
+              foreground: 000000ff
+              deco: {stack: [background: {color: bc2b3fff}, <<: *underline]}
+        content:
+          "":
+            map:
+              tag: state
+              values:
+                focused:   {string: {<<: [*default, *focused]}}
+                unfocused: {string: {<<: *default}}
+                invisible: {string: {<<: [*default, *invisible]}}
+                urgent:    {string: {<<: [*default, *urgent]}}
+          current:
+            - string: {text: " {title}", max: "115"}
+
+  right:
+  - network:
+      name: 'wlp2s0'
+      content:
+        - map:
+            tag: carrier
+            values:
+              true:
+                - map:
+                    tag: state
+                    default:
+                      string: {text: "\uF6D7 {ssid}"}
+                    values:
+                      up:
+                        string: {text: "\uFAA8 {ssid}"}
+              false:
+                - string: {text: "\uF818 offline"}
+
+  - alsa:
+      card: default
+      mixer: Master
+      content:
+        map:
+          tag: online
+          values:
+            false: {string: {text: ''}}
+            true:
+              map:
+                on-click: amixer -q sset Master toggle
+                tag: muted
+                values:
+                  true: {string: {text: ''}}
+                  false:
+                    map:
+                      tag: percent
+                      default: {string: {text: ' {percent}%'}}
+                      values:
+                        0: {string: {text: ' {percent}%'}}
+
+  - backlight:
+      name: amdgpu_bl0
+      content: [ string: {text: " " }, string: {text: "{percent}%"}]
+
+  - battery:
+        name: BAT0
+        poll-interval: 5
+        anchors:
+          discharging: &discharging
+            list:
+              items:
+                - ramp:
+                    tag: capacity
+                    items:
+                      - string: {text: '', foreground: ff0000ff}
+                      - string: {text: '', foreground: ffa600ff}
+                      - string: {text: '',}
+                      - string: {text: '',}
+                      - string: {text: '',}
+                      - string: {text: '',}
+                      - string: {text: '',}
+                      - string: {text: '',}
+                      - string: {text: '',}
+                      - string: {text: '', foreground: bfff00ff}
+                - string: {text: " {capacity}%"}
+        content:
+          map:
+            tag: state
+            values:
+              unknown:
+                <<: *discharging
+              discharging:
+                <<: *discharging
+              charging: &charging
+                - string: {text: '', foreground: bfff00ff}
+                - string: {text: " {capacity}%"}
+              full:
+                - string: {text: ' ', foreground: bfff00ff}
+                - string: {text: "{capacity}%"}
+              not charging: *charging
+
+  - clock:
+      time-format: '%H:%M'
+      date-format: '%a %d %b'
+      content:
+        list:
+          spacing: 5
+          items:
+          - string: {text: ' {date}'}
+          - string: {text: ' {time}'}
+
+  - label:
+      content:
+        string:
+          on-click: /home/try/.local/bin/exit_dmenu
+          text: " "

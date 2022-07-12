@@ -24,9 +24,9 @@ then
 elif [ "$SELECTED" = "tmux/" ]
 then
     nvim ~/.tmux.conf
-elif [ "$SELECTED" = "waybar/" ]
+elif [ "$SELECTED" = "yambar/" ]
 then
-    cd ~/.config/waybar/; nvim config
+    nvim ~/.config/yambar/config.yml
 elif [ "$SELECTED" = "zsh/" ]
 then
     nvim ~/.zshrc

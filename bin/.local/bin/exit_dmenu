@@ -1,0 +1,19 @@
+#!/usr/bin/env sh
+
+SELECTED=`echo -e "No\nLock\nExit\nShutdown\nReboot" | dmenu -i -fn "JetBrains Mono:pixelsize=14" -nb "#1a1b26" -nf "#c0caf5" -sb "#9ece6a" -sf "#15161E" -p Exit`
+
+if [ "$SELECTED" = "Lock" ]
+then
+    swaylock
+elif [ "$SELECTED" = "Exit" ]
+then
+    exit
+elif [ "$SELECTED" = "Shutdown" ]
+then
+    systemctl poweroff
+elif [ "$SELECTED" = "Reboot" ]
+then
+    systemctl reboot
+else
+    :
+fi

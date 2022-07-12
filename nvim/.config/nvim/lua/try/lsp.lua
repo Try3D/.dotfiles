@@ -1,8 +1,8 @@
 local Remap = require("try.keymap")
 local nnoremap = Remap.nnoremap
 
-nnoremap("F", "<cmd>lua vim.diagnostic.goto_prev()<CR>")
-nnoremap("U", "<cmd>lua vim.diagnostic.goto_next()<CR>")
+nnoremap("<C-G>", "<cmd>lua vim.diagnostic.goto_prev()<CR>")
+nnoremap("<C-M>", "<cmd>lua vim.diagnostic.goto_next()<CR>")
 
 nnoremap("<leader>lo", "<cmd>lua vim.diagnostic.setloclist()<CR>")
 
