@@ -37,8 +37,8 @@ focus_follows_mouse no
 
 # Borders
 hide_edge_borders smart
-default_border pixel
-default_floating_border pixel
+default_border pixel 1
+default_floating_border pixel 1
 
 # Idle configuration
 exec swayidle -w \
@@ -161,6 +161,7 @@ exec firefox &
 exec nm-applet &
 exec blueman-applet &
 exec ~/.local/bin/sway-battery-popup &
+exec ~/.local/bin/tmuxsessionizer /home/try &
 
 exec_always ~/.local/bin/launch-yambar
 

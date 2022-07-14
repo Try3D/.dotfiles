@@ -1,5 +1,3 @@
--- Telescope Config
-
 require("telescope").setup {
     defaults = {
         scroll_strategy = "limit",

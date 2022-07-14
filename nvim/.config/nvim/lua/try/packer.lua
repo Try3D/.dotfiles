@@ -10,22 +10,20 @@ return require("packer").startup(function()
     use { "L3MON4D3/LuaSnip" }
     use { "saadparwaiz1/cmp_luasnip" }
 
-    use { "Raimondi/delimitMate" }
-    use { "tpope/vim-commentary" }
-    use { "tpope/vim-surround" }
     use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" }
+    use { "ellisonleao/glow.nvim" }
+    use { "tpope/vim-surround" }
+    use { "echasnovski/mini.nvim" }
 
     use { "TimUntersberger/neogit" }
     use { "mbbill/undotree" }
+    use { "nvim-lualine/lualine.nvim" }
 
     use { "nvim-telescope/telescope.nvim" }
     use { "nvim-lua/plenary.nvim" }
     use { "ThePrimeagen/harpoon" }
     use { "nvim-telescope/telescope-fzf-native.nvim", run = "make" }
 
-    use { "ellisonleao/glow.nvim" }
-
     use { "folke/tokyonight.nvim" }
-    use { "nvim-lualine/lualine.nvim" }
     use { "kyazdani42/nvim-web-devicons" }
 end)

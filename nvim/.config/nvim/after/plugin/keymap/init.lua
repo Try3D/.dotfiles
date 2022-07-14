@@ -6,9 +6,6 @@ local vnoremap = Remap.vnoremap
 vnoremap("<C-e>", ":m '>+1<CR>gv=gv")
 vnoremap("<C-i>", ":m '<-2<CR>gv=gv")
 
-nnoremap("<leader>/", "<cmd>Commentary<CR>")
-vnoremap("<leader>/", ":Commentary<CR>")
-
 nnoremap("<leader>n", "<C-w>h")
 nnoremap("<leader>e", "<C-w>j")
 nnoremap("<leader>i", "<C-w>k")

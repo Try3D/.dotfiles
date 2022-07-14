@@ -4,25 +4,25 @@ xkb_keymap {
         xkb_compat    { include "complete"      };
 partial alphanumeric_keys
 
-xkb_symbols "wide-programmer-colemak" {
+xkb_symbols "numbers-colemak" {
 
     include "pc"
     include "inet(evdev)"
 
     include "us(basic)"
-    name[Group1]= "English (Wide Programmer Colemak)";
+    name[Group1]= "English (Numbers Colemak)";
 
     key <TLDE> { [       dollar,      asciitilde ] };
-    key <AE01> { [       exclam,            1, 1 ] };
-    key <AE02> { [  bracketleft,            2, 2 ] };
-    key <AE03> { [    braceleft,            3, 3 ] };
-    key <AE04> { [    parenleft,            4, 4 ] };
-    key <AE05> { [      percent,            5, 5 ] };
-    key <AE06> { [   numbersign,            6, 6 ] };
-    key <AE07> { [   parenright,            7, 7 ] };
-    key <AE08> { [   braceright,            8, 8 ] };
-    key <AE09> { [ bracketright,            9, 9 ] };
-    key <AE10> { [     asterisk,            0, 0 ] };
+    key <AE01> { [       1,            exclam, 1 ] };
+    key <AE02> { [  2,            bracketleft, 2 ] };
+    key <AE03> { [    3,            braceleft, 3 ] };
+    key <AE04> { [    4,            parenleft, 4 ] };
+    key <AE05> { [      5,            present, 5 ] };
+    key <AE06> { [   6,            numbersign, 6 ] };
+    key <AE07> { [   7,            parenright, 7 ] };
+    key <AE08> { [   8,            braceright, 8 ] };
+    key <AE09> { [ 9,            bracketright, 9 ] };
+    key <AE10> { [     0,            asterisk, 0 ] };
     key <AE11> { [        minus,   underscore ] };
     key <AE12> { [        equal,         plus ] };
 
@@ -37,7 +37,7 @@ xkb_symbols "wide-programmer-colemak" {
     key <AD09> { [            y,            Y ] };
     key <AD10> { [    semicolon,    ampersand ] };
     key <AD11> { [        colon,        grave ] };
-    key <AD12> { [  asciicircum,           at ] };
+    key <AD12> { [           at,  asciicircum ] };
     key <BKSL> { [    backslash,          bar ] };
 
     key <AC01> { [            a,            A,    Home ] };

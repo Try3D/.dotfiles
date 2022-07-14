@@ -1,6 +1,7 @@
 #!/usr/bin/sh
 
-cd ~/.local/share/backgrounds/
+BACKGROUND=$HOME/.local/share/backgrounds/
+cd $BACKGROUND
 
 if [ "$1" = "-r" -o "$1" = "--random" ]; then
     SELECTED=`shuf -e * | shuf -n 1`
@@ -11,6 +12,6 @@ fi
 
 rm ~/.config/sway/background
 
-echo output \* bg $HOME/.local/share/backgrounds/$SELECTED fill >> ~/.config/sway/background
+echo output \* bg $BACKGROUND/$SELECTED fill >> ~/.config/sway/background
 
 sway reload
