@@ -9,7 +9,7 @@ set {
     $down e
     $up i
     $right o
-    $run dmenu -i -fn "JetBrains Mono:pixelsize=14" -nb "#1a1b26" -nf "#c0caf5" -sb "#9ece6a" -sf "#15161E"
+    $run dmenu -i -fn "JetBrains Mono:pixelsize=13" -nb "#1a1b26" -nf "#c0caf5" -sb "#9ece6a" -sf "#15161E"
 }
 
 font pango: Ubuntu Mono 8
@@ -161,7 +161,8 @@ exec firefox &
 exec nm-applet &
 exec blueman-applet &
 exec ~/.local/bin/sway-battery-popup &
-exec ~/.local/bin/tmuxsessionizer /home/try &
+exec ~/.local/bin/tmuxsessionizer /home/* &
+exec wlsunset -l 13.082680 -L 80.270721
 
 exec_always ~/.local/bin/launch-yambar
 

@@ -3,7 +3,7 @@ underline: &underline {underline: { size: 2, color: bb9af7FF}}
 
 bar:
   location: top
-  height: 22
+  height: 21
   font: *font
   background: 1a1b26FF
   foreground: c0caf5FF
@@ -32,7 +32,7 @@ bar:
                 invisible: {string: {<<: [*default, *invisible]}}
                 urgent:    {string: {<<: [*default, *urgent]}}
           current:
-            - string: {text: " {title}", max: "115"}
+            - string: {text: " {title}", max: "90"}
 
   right:
   - network:
@@ -75,7 +75,7 @@ bar:
 
   - backlight:
       name: amdgpu_bl0
-      content: [ string: {text: " " }, string: {text: "{percent}%"}]
+      content: [ string: {text: "盛 " }, string: {text: "{percent}%"}]
 
   - battery:
         name: BAT0
@@ -128,4 +128,4 @@ bar:
       content:
         string:
           on-click: /home/try/.local/bin/exit_dmenu
-          text: " "
+          text: " "
