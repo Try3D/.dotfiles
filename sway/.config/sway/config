@@ -3,14 +3,17 @@
 seat seat0 xcursor_theme "Future-cyan-cursors"
 exec_always gsettings set org.gnome.desktop.interface cursor-theme "Future-cyan-cursors"
 
-set {
-    $mod Mod1
-    $left n
-    $down e
-    $up i
-    $right o
-    $run dmenu -i -fn "JetBrains Mono:pixelsize=13" -nb "#1a1b26" -nf "#c0caf5" -sb "#9ece6a" -sf "#15161E"
-}
+set $mod Mod1
+set $left n
+set $down e
+set $up i
+set $right o
+
+set $run dmenu -l 10
+
+# Start launcher
+bindsym $mod+r exec  dmenu_path | $run -p run| xargs swaymsg exec --
+bindsym $mod+space exec ~/.local/bin/dmenu_desktop | $run -p app| ~/.local/bin/dmenu_desktop -e
 
 font pango: Ubuntu Mono 8
 
@@ -58,14 +61,10 @@ input "type:keyboard" {
 }
 
 # Terminal
-bindsym $mod+Return exec foot
+bindsym $mod+Return exec footclient
 
 # Kill window
 bindsym $mod+q kill
-
-# Start launcher
-bindsym $mod+r exec  dmenu_path | $run -p Run | xargs swaymsg exec --
-bindsym $mod+space exec ~/.local/bin/dmenu_desktop | $run -p Apps | ~/.local/bin/dmenu_desktop -e
 
 # Floating
 floating_modifier $mod normal
@@ -152,7 +151,7 @@ client.placeholder      #1E222A #1E222A #FFFFFF #98C379   #1E222A
 client.background       #1E222A
 
 # Custom Keybindings
-bindsym $mod+p exec foot -e ranger
+bindsym $mod+p exec footclient -e ranger
 bindsym $mod+Escape exec swaylock
 bindsym $mod+shift+b exec ~/.local/bin/setbackground
 
@@ -162,6 +161,7 @@ exec nm-applet &
 exec blueman-applet &
 exec ~/.local/bin/sway-battery-popup &
 exec ~/.local/bin/tmuxsessionizer /home/* &
+exec foot --server
 exec wlsunset -l 13.082680 -L 80.270721
 
 exec_always ~/.local/bin/launch-yambar

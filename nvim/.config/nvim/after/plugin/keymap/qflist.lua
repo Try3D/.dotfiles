@@ -1,4 +1,4 @@
-local Remap = require("try.keymap")
+local Remap = require("try.utils")
 local nnoremap = Remap.nnoremap
 
 nnoremap("<C-q>", "<cmd>copen<CR>")
@@ -6,5 +6,5 @@ nnoremap("<C-g>", "<cmd>cprev<CR>")
 nnoremap("<C-m>", "<cmd>cnext<CR>")
 
 nnoremap("<leader>q", "<cmd>lopen<CR>")
-nnoremap("F", "<cmd>lprev<CR>")
-nnoremap("U", "<cmd>lnext<CR>")
+nnoremap("B", "<cmd>lprev<CR>")
+nnoremap("J", "<cmd>lnext<CR>")

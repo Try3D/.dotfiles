@@ -6,7 +6,7 @@ cd $BACKGROUND
 if [ "$1" = "-r" -o "$1" = "--random" ]; then
     SELECTED=`shuf -e * | shuf -n 1`
 else
-    SELECTED=`shuf -e * |  dmenu -i -fn "JetBrains Mono:pixelsize=16" -nb "#1a1b26" -nf "#c0caf5" -sb "#9ece6a" -sf "#15161E" -p "Bg"`
+    SELECTED=`shuf -e * | dmenu -p Bg -l 10`
 
 fi
 

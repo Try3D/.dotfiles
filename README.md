@@ -18,5 +18,5 @@ stow
 brightnessctl
 JetBrains Mono
 Ubuntu Mono
-Glow(markdown reader)
+wlsunset
 ```

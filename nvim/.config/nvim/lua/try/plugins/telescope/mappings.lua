@@ -1,4 +1,4 @@
-local Remap = require("try.keymap")
+local Remap = require("try.utils")
 local nnoremap = Remap.nnoremap
 
 local telescope = require("telescope.builtin")
@@ -26,5 +26,5 @@ nnoremap("<C-/>", function()
 end)
 
 nnoremap("<leader>fd", function()
-    require("try.telescope").search_dotfiles()
+    require("try.plugins.telescope").search_dotfiles()
 end)

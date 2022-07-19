@@ -1,4 +1,4 @@
-local Remap = require("try.keymap")
+local Remap = require("try.utils")
 
 local nnoremap = Remap.nnoremap
 local vnoremap = Remap.vnoremap
@@ -17,7 +17,6 @@ nnoremap("'i", "<cmd>resize +4<CR>")
 nnoremap("'o", "<cmd>vertical resize +4<CR>")
 
 nnoremap("<leader>u", "<cmd>UndotreeToggle<CR>")
-nnoremap("<leader>g", "<cmd>Glow<CR>")
 
 vnoremap("<leader>c", '"+y')
 nnoremap("<leader>v", '"+p')

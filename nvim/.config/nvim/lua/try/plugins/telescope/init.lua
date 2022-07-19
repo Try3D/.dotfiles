@@ -1,3 +1,5 @@
+require("try.plugins.telescope.mappings")
+
 require("telescope").setup {
     defaults = {
         scroll_strategy = "limit",
