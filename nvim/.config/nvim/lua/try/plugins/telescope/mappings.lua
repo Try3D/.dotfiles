@@ -19,7 +19,7 @@ nnoremap("<leader>fr", function()
     telescope.live_grep()
 end)
 
-nnoremap("<C-/>", function()
+nnoremap("?", function()
     telescope.current_buffer_fuzzy_find({
         sorting_strategy = "ascending",
     })

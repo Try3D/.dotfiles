@@ -1,62 +1,76 @@
 return require("packer").startup(function()
     use { "wbthomason/packer.nvim" }
 
-    use { "neovim/nvim-lspconfig" }
-    use { "hrsh7th/nvim-cmp" }
-    use { "hrsh7th/cmp-nvim-lsp" }
-    use { "hrsh7th/cmp-path" }
-    use { "hrsh7th/cmp-buffer" }
+    use {
+        "neovim/nvim-lspconfig",
+        config = require('try.plugins.lsp'),
+        requires = {
+            "williamboman/nvim-lsp-installer"
+        }
+    }
 
-    use { "williamboman/nvim-lsp-installer" }
-    use { "L3MON4D3/LuaSnip" }
-    use { "saadparwaiz1/cmp_luasnip" }
+    use {
+        "hrsh7th/nvim-cmp",
+        config = require('try.plugins.cmp'),
+        requires = {
+            "hrsh7th/cmp-nvim-lsp",
+            "hrsh7th/cmp-path",
+            "hrsh7th/cmp-buffer",
+        }
+    }
 
-    use { "tpope/vim-surround" }
+    use {
+        "L3MON4D3/LuaSnip",
+        config = require('try.plugins.luasnip'),
+        requires = {
+            "saadparwaiz1/cmp_luasnip"
+        },
+    }
 
-    use { "mbbill/undotree" }
-    use { "folke/tokyonight.nvim" }
-    use { "kyazdani42/nvim-web-devicons" }
-
-    use({
+    use {
         "nvim-lualine/lualine.nvim",
         config = require('try.plugins.lualine'),
-    })
+        requires = {
+            "kyazdani42/nvim-web-devicons"
+        }
+    }
 
-    use({
+    use {
+        "folke/tokyonight.nvim",
+        config = require('try.plugins.tokyonight'),
+    }
+
+    use {
         "TimUntersberger/neogit",
-        config = function()
-            require('try.plugins.neogit')
-        end,
-    })
+        config = require('try.plugins.neogit'),
+    }
 
-    use({
+    use {
         "echasnovski/mini.nvim",
-        config = function()
-            require('try.plugins.mini')
-        end,
-    })
+        config = require('try.plugins.mini'),
+    }
 
-    use({
+    use {
         "nvim-treesitter/nvim-treesitter", run = ":TSUpdate",
-        config = function()
-            require('try.plugins.treesitter')
-        end,
-    })
+        config = require('try.plugins.treesitter'),
+    }
 
-    use({
+    use {
         "nvim-telescope/telescope.nvim",
-        requires = { "nvim-telescope/telescope-fzf-native.nvim", run = "make" },
-        config = function()
-            require('try.plugins.telescope')
-        end,
-    })
+        config = require('try.plugins.telescope'),
+        requires = { "nvim-telescope/telescope-fzf-native.nvim",
+            run = "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build" }
+    }
 
-    use({
+    use {
         "ThePrimeagen/harpoon",
-        requires = { "nvim-lua/plenary.nvim" },
-        config = function()
-            require('try.plugins.harpoon')
-        end,
-    })
+        config = require('try.plugins.harpoon'),
+        requires = {
+            "nvim-lua/plenary.nvim"
+        }
+    }
+
+    use { "tpope/vim-surround" }
+    use { "mbbill/undotree" }
 
 end)

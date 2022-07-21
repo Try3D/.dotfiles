@@ -1,5 +1,10 @@
-require("try.cmp")
-require("try.lsp")
-require("try.netrw")
-require("try.packer")
-require("try.sets")
+local modules = {
+    "mappings",
+    "sets",
+    "autocmd",
+    "packer",
+}
+
+for _, mod in ipairs(modules) do
+    require("try." .. mod)
+end

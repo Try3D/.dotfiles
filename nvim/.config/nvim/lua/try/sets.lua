@@ -25,4 +25,7 @@ vim.opt.ignorecase = true
 vim.opt.updatetime = 50
 
 vim.g.mapleader = " "
-vim.g.glow_border = "rounded"
+
+vim.g.netrw_winsize = 20
+vim.g.netrw_banner = 0
+vim.g.netrw_localcopydircmd = "cp -r"

@@ -1,10 +1,12 @@
 local Remap = require("try.utils")
 local nnoremap = Remap.nnoremap
 
-nnoremap("<leader>hm", ":lua require('harpoon.ui').toggle_quick_menu()<CR>")
-nnoremap("<leader>ha", ":lua require('harpoon.mark').add_file()<CR>")
+local opts = { silent = true }
 
-nnoremap("<leader><C-q>", ":lua require('harpoon.ui').nav_file(1)<CR>")
-nnoremap("<leader><C-w>", ":lua require('harpoon.ui').nav_file(2)<CR>")
-nnoremap("<leader><C-f>", ":lua require('harpoon.ui').nav_file(3)<CR>")
-nnoremap("<leader><C-p>", ":lua require('harpoon.ui').nav_file(4)<CR>")
+nnoremap("<c-l>", ":lua require('harpoon.ui').toggle_quick_menu()<CR>", opts)
+nnoremap("<leader>a", ":lua require('harpoon.mark').add_file()<CR>")
+
+nnoremap("<C-h>", ":lua require('harpoon.ui').nav_file(1)<CR>", opts)
+nnoremap("<C-,>", ":lua require('harpoon.ui').nav_file(2)<CR>", opts)
+nnoremap("<C-.>", ":lua require('harpoon.ui').nav_file(3)<CR>", opts)
+nnoremap("<C-/>", ":lua require('harpoon.ui').nav_file(4)<CR>", opts)

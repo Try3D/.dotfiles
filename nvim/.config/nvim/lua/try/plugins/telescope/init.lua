@@ -2,7 +2,6 @@ require("try.plugins.telescope.mappings")
 
 require("telescope").setup {
     defaults = {
-        scroll_strategy = "limit",
         mappings = {
             i = {
                 ["<esc>"] = require("telescope.actions").close,

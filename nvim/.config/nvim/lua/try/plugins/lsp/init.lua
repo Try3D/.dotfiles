@@ -1,7 +1,7 @@
+local lsp = require("lspconfig")
+
 local Remap = require("try.utils")
 local nnoremap = Remap.nnoremap
-
-local lsp = require("lspconfig")
 
 require("nvim-lsp-installer").setup {
     ensure_installed = {},
@@ -13,9 +13,9 @@ nnoremap("J", "<cmd>lua vim.diagnostic.goto_next()<CR>")
 nnoremap("<leader>lo", "<cmd>lua vim.diagnostic.setloclist()<CR>")
 
 local on_attach = function()
-    nnoremap("hd", "<cmd>lua vim.lsp.buf.definition()<CR>")
-    nnoremap("ha", "<cmd>lua vim.lsp.buf.code_action()<CR>")
-    nnoremap("hr", "<cmd>lua vim.lsp.buf.references()<CR>")
+    nnoremap("ld", "<cmd>lua vim.lsp.buf.definition()<CR>")
+    nnoremap("la", "<cmd>lua vim.lsp.buf.code_action()<CR>")
+    nnoremap("lr", "<cmd>lua vim.lsp.buf.references()<CR>")
     nnoremap("K", "<cmd>lua vim.lsp.buf.hover()<CR>")
     nnoremap("<F2>", "<cmd>lua vim.lsp.buf.rename()<CR>")
     nnoremap("<leader>fm", "<cmd>lua vim.lsp.buf.format()<CR>")
@@ -29,6 +29,8 @@ lsp.pyright.setup { on_attach = on_attach }
 
 lsp.rust_analyzer.setup { on_attach = on_attach }
 
+lsp.tsserver.setup { on_attach = on_attach }
+
 lsp.sumneko_lua.setup {
     on_attach = on_attach,
     settings = {
@@ -39,5 +41,3 @@ lsp.sumneko_lua.setup {
         },
     },
 }
-
-lsp.tsserver.setup { on_attach = on_attach }
