@@ -1,17 +1,19 @@
 #!/usr/bin/sh
 
-BACKGROUND=$HOME/.local/share/backgrounds/
+BACKGROUND=$HOME/.local/share/backgrounds/wallpapers/Nord/
 cd $BACKGROUND
 
 if [ "$1" = "-r" -o "$1" = "--random" ]; then
     SELECTED=`shuf -e * | shuf -n 1`
 else
     SELECTED=`shuf -e * | dmenu -p Bg -l 10`
-
 fi
 
-rm ~/.config/sway/background
 
-echo output \* bg $BACKGROUND/$SELECTED fill >> ~/.config/sway/background
-
-sway reload
+if [ -z $SELECTED ];
+then
+    :
+else
+    killall swaybg
+    swaybg -i $BACKGROUND/$SELECTED -m fill
+fi

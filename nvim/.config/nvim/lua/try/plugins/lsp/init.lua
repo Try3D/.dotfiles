@@ -21,8 +21,6 @@ local on_attach = function()
     nnoremap("<leader>fm", "<cmd>lua vim.lsp.buf.format()<CR>")
 end
 
-lsp.clangd.setup { on_attach = on_attach }
-
 lsp.gopls.setup { on_attach = on_attach }
 
 lsp.pyright.setup { on_attach = on_attach }

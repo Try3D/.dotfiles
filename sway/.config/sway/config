@@ -166,8 +166,8 @@ exec ~/.local/bin/sway-battery-popup &
 exec ~/.local/bin/tmuxsessionizer /home/* &
 exec foot --server
 exec wlsunset -l 13.082680 -L 80.270721
+exec ~/.local/bin/setbackground -r
 
 exec_always ~/.local/bin/launch-yambar
 
 include /etc/sway/config.d/*
-include $HOME/.config/sway/background
